@@ -8,7 +8,7 @@
         ""
       ],
       "collaborators": [
-        "jogador"
+        "Jogador"
       ]
     },
     {
@@ -19,10 +19,12 @@
       "responsibilities": [
         "inventário",
         "dinheiro ",
+        "pontos de experiência",
         "nível"
       ],
       "collaborators": [
-        "sistema"
+        "Sistema",
+        ""
       ]
     },
     {
@@ -35,7 +37,7 @@
         "mostrar inventário"
       ],
       "collaborators": [
-        ""
+        "Jogador"
       ]
     },
     {
@@ -49,7 +51,7 @@
         "imprimir o dinheiro do jogador"
       ],
       "collaborators": [
-        ""
+        "Jogador"
       ]
     },
     {
@@ -60,7 +62,36 @@
       "responsibilities": [
         "adicionar nível",
         "reduzir nível",
-        "imprimir o nível do jogador"
+        "imprimir o nível do jogador",
+        "aumentar os pontos de experiência",
+        "diminuir os pontos de experiência"
+      ],
+      "collaborators": [
+        "Jogador"
+      ]
+    },
+    {
+      "name": "Pescador",
+      "superclasses": "Jogador",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "sortear peixe"
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Agricultor",
+      "superclasses": "Jogador",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "criar plantação",
+        "plantar",
+        "regar",
+        "colher"
       ],
       "collaborators": [
         ""
