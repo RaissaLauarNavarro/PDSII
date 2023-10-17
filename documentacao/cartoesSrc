@@ -1,0 +1,69 @@
+[
+    {
+      "name": "Sistema",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        ""
+      ],
+      "collaborators": [
+        "jogador"
+      ]
+    },
+    {
+      "name": "Jogador",
+      "superclasses": "",
+      "subclasses": "Pescador, Agricultor, Mineiro",
+      "type": 1,
+      "responsibilities": [
+        "inventário",
+        "dinheiro ",
+        "nível"
+      ],
+      "collaborators": [
+        "sistema"
+      ]
+    },
+    {
+      "name": "Inventário",
+      "superclasses": "Sistema",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "adicionar ítem ao inventário",
+        "mostrar inventário"
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Moeda",
+      "superclasses": "Sistema",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "aumentar dinheiro",
+        "reduzir dinheiro",
+        "imprimir o dinheiro do jogador"
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Nível",
+      "superclasses": "Sistema",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "adicionar nível",
+        "reduzir nível",
+        "imprimir o nível do jogador"
+      ],
+      "collaborators": [
+        ""
+      ]
+    }
+  ]
