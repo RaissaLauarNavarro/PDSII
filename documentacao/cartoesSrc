@@ -5,7 +5,9 @@
       "subclasses": "",
       "type": 1,
       "responsibilities": [
-        ""
+        "ler o arquivo de salvamento",
+        "atualizar informações do jogador",
+        "salvar no arquivo de salvamento"
       ],
       "collaborators": [
         "Jogador"
@@ -28,12 +30,14 @@
       ]
     },
     {
-      "name": "Inventário",
+      "name": "Gerenciador do inventário",
       "superclasses": "Sistema",
       "subclasses": "",
       "type": 1,
       "responsibilities": [
-        "adicionar ítem ao inventário",
+        "adicionar item ao inventário",
+        "remover item do inventario",
+        "alterar informação sobre item (quantidade, preço....)",
         "mostrar inventário"
       ],
       "collaborators": [
@@ -41,7 +45,7 @@
       ]
     },
     {
-      "name": "Moeda",
+      "name": "Gerenciador de moedas",
       "superclasses": "Sistema",
       "subclasses": "",
       "type": 1,
@@ -55,7 +59,7 @@
       ]
     },
     {
-      "name": "Nível",
+      "name": "Gerenciador de níveis",
       "superclasses": "Sistema",
       "subclasses": "",
       "type": 1,
@@ -92,6 +96,35 @@
         "plantar",
         "regar",
         "colher"
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Minerador",
+      "superclasses": "Jogador",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "minerar ",
+        "refinar minérios (aumenta seu preço)"
+      ],
+      "collaborators": [
+        ""
+      ]
+    },
+    {
+      "name": "Item",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "nome do item",
+        "código",
+        "categoria",
+        "quantidade",
+        "preço"
       ],
       "collaborators": [
         ""
