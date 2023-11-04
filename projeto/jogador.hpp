@@ -2,7 +2,6 @@
 
 class Jogador {
     
-
     private:
         std::string _nome;
         int _pontos;
