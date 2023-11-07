@@ -1,0 +1,14 @@
+1- Pescador
+    - Pescar peixe 
+    - Limpar peixes (aumenta o preço em 10%)
+2- Agricultor
+    - Obter trigo (usado para obter ovo)
+    - Obter cenoura (usada para obter bacon)
+3- Pecuarista
+    - Obter bacon
+    - Obter ovo
+4- Mineiro
+    - Mineirar
+    - Refinar minérios (necessário para melhorar ferrramentas)
+5- Ferreiro
+    - Melhorar Ferramentas
