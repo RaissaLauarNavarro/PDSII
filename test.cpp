@@ -10,13 +10,15 @@
 
 TEST_CASE("Inserção")
 {
-    Item item1("Item teste 1", 10.3);
-    Item item2("Item teste 2", 20.3);
-    Item item3("Item teste 3", 30.3);
+    Item item1(0,"Item teste 1", 10.3);
+    Item item2(1,"Item teste 2", 20.3);
+    Item item3(2,"Item teste 3", 30.3);
     Inventory inventario(5);
-    inventario.insert(item1);
-    inventario.insert(item1);
-    inventario.insert(item2);
+    inventario.insert(item1.getId(),item1);
+    inventario.insert(item1.getId(),item1);
+    inventario.insert(item2.getId(),item2);
+    // inventario.insert(item1);
+    // inventario.insert(item2);
     // inventario.insert("teste1");
     // inventario.insert("teste2");
     // inventario.insert("teste3");

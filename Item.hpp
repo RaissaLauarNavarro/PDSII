@@ -5,15 +5,17 @@ class Item
 {
 public:
 
-    Item(std::string name, float price);
+    Item(int id, std::string name, float price);
     std::string getName();
     /// @brief retorna o preço de uma unidade daquele item
     /// @param name nome do item buscado
     float unitaryPrice(std::string nome);
+    int getId();
 
     
     
 private:
+    int _id;
     std::string _name;
     float _price;
 };

@@ -8,9 +8,25 @@ Inventory::Inventory(unsigned capacity)
     _inventorySize = capacity;
 }
 
-bool Inventory::insert(Item item)
+bool Inventory::insert(int id,Item item)
 {
     std::cout << "Item atual sendo inserido : "<< item.getName() << std::endl; 
+    
+    std::cout << id << std::endl;
+    // auto find = _inventory.find(id);s
+    if(_inventory.find(id) != _inventory.end())
+    {
+    
+    std::cout << "entrou aq" << std::endl;
+    std::cout << _inventory[id].second.second << std::endl;
+    }
+    else
+    {
+        std::cout << "entrou aq no else" << std::endl;
+        _inventory.insert({id, std::make_pair(item,1)});
+        // _inventory[id]= std::make_pair(item, 1);
+    }
+
     // std::string key = item.getName();
     // if (_inventory.find(key) != _inventory.end())
     // {
@@ -25,7 +41,7 @@ bool Inventory::insert(Item item)
     return true;
 }
 
-std::map<Item, unsigned> Inventory::list()
+std::map<int, std::pair<Item, unsigned>> Inventory::list()
 {
     // for(auto item : _inventory)
     // {
