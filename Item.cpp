@@ -16,3 +16,7 @@ int Item::getId()
 {
     return _id;
 }
+float Item::getUnitaryPrice()
+{
+    return _price;
+}

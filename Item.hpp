@@ -9,7 +9,7 @@ public:
     std::string getName();
     /// @brief retorna o preço de uma unidade daquele item
     /// @param name nome do item buscado
-    float unitaryPrice(std::string nome);
+    float getUnitaryPrice();
     int getId();
 
     

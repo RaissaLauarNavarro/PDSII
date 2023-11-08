@@ -17,6 +17,7 @@ TEST_CASE("Inserção")
     inventario.insert(item1.getId(),item1);
     inventario.insert(item1.getId(),item1);
     inventario.insert(item2.getId(),item2);
+    inventario.list();
     // inventario.insert(item1);
     // inventario.insert(item2);
     // inventario.insert("teste1");
