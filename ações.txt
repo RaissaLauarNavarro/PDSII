@@ -12,3 +12,16 @@
     - Refinar minérios (necessário para melhorar ferrramentas)
 5- Ferreiro
     - Melhorar Ferramentas
+
+
+
+#include <ctime>  
+#include <cstdlib>
+
+int sortearNumero(int tamanhoPalavras){
+    // Seed a função rand() com o tempo atual para obter números verdadeiramente aleatórios.
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
+    int indiceAleatorio = std::rand() % tamanhoPalavras;
+    return indiceAleatorio;
+}
