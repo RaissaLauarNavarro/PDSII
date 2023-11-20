@@ -7,7 +7,7 @@
 
 Inventory Farmer::getWheat(int quantidade, Inventory inventario){
     int i = 0;
-    for (const auto& entry : _inventory) {
+    for (const auto& entry : inventario) {
         if(entry.first ==   && i < quantidade){ //colocar o item semente
             inventario.insert(2, Item(2, "Trigo", 1.00, 0)); 
             //remover 1 semente do inventário
@@ -20,7 +20,7 @@ Inventory Farmer::getWheat(int quantidade, Inventory inventario){
 
 Inventory Farmer::getCarrot(int quantidade, Inventory inventario){
     int i = 0;
-    for (const auto& entry : _inventory) {
+    for (const auto& entry : inventario) {
         if(entry.first ==   && i < quantidade){ //colocar o item semente
             inventario.insert(3, Item(3, "Cenoura", 1.00, 0)); 
             //remover 1 semente do inventário

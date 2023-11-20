@@ -22,7 +22,7 @@ Inventory Fisherman::fish(Inventory inventario){
     // Assim, ocorre um sorteio do peixe a ser pescado
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int indiceAleatorio = std::rand() % peixesPossiveis.size();
-    inventario.insert(peixesPossiveis[indiceAleatorio].id, peixesPossiveis[indiceAleatorio]);
+    inventario.insert(peixesPossiveis[indiceAleatorio].getId(), peixesPossiveis[indiceAleatorio]);
 
     return inventario;
 }
