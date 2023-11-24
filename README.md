@@ -7,15 +7,19 @@ Professor Luigi Domenico
 
 
 
+<br>
+
 ## Sobre o projeto
 
 No "nome do jogo", você deve realizar ações para receber moedas e suir de nível!
 
-Transite entre as diferentes funcionalidades de um fazendeiro e obtenha os itens necessários para valorizar seus pertences;
+Transite entre as diferentes funcionalidades de um fazendeiro e obtenha os itens necessários para valorizar seus pertences.
 
 Não se esqueça de fazer negócio na loja e aumentar sua produção!
 
 
+
+<br>
 
 ## Funcionalidades
   - 
@@ -25,6 +29,8 @@ Não se esqueça de fazer negócio na loja e aumentar sua produção!
   - Compre e venda itens na loja.
 
 
+
+<br>
 
 ## Compilação e Execução
 
@@ -40,6 +46,8 @@ Para compilar e executar o programa, siga as instruções abaixo:
    colocar o comando
     ```
 
+
+<br>
 
 ## Integrantes do grupo:
 
