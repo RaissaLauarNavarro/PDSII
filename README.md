@@ -51,14 +51,12 @@ Para compilar e executar o programa, siga as instruções abaixo:
 
 ## Integrantes do grupo:
 
-<ul>
-  <li>Emanuelle King Amaral</li>
+  - Emanuelle King Amaral
   
-  <li>Jean Pierry Alves Lopes</li>
+  - Jean Pierry Alves Lopes
   
-  <li>Mateus Souza Barreto</li>
+  - Mateus Souza Barreto
   
-  <li>Naually Pereira Sejimo de Avila</li>
+  - Naually Pereira Sejimo de Avila
   
-  <li>Raissa Lauar Gonçalves Navarro da Silva</li>
-</ul>
+ - Raissa Lauar Gonçalves Navarro da Silva
