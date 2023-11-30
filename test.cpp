@@ -4,21 +4,29 @@
 #include "doctest.h"
 
 #include "inventory.hpp"
+#include "inventory.cpp"
 #include "Item.hpp"
 #include "Item.cpp"
-#include "inventory.cpp"
 #include "Sistema.hpp"
+#include "Sistema.cpp"
+#include "Player.hpp"
+#include "Player.cpp"
+#include "Menu.hpp"
+#include "Menu.cpp"
 #include "StorageManager.hpp"
+#include "Farmer.hpp"
+#include "Farmer.cpp"
 
 // TEST_CASE("Inserção")
 // {
-//     Item item2(1,"Item teste 2", 20.3);
-//     Item item3(2,"Item teste 3", 30.3);
+//     Item item1(0, "Item teste 1", 10.3, true);
+//     Item item2(1, "Item teste 2", 20.3, true);
+//     Item item3(2, "Item teste 3", 30.3, false);
 //     Inventory inventario(5);
-//     Inventory inventario(5);
-//     inventario.insert(item1.getId(),item1);
-//     inventario.insert(item1.getId(),item1);
-//     inventario.insert(item2.getId(),item2);
+//     // Inventory inventario(5);
+//     inventario.insert(item1.getId(), item1);
+//     inventario.insert(item1.getId(), item1);
+//     inventario.insert(item2.getId(), item2);
 //     inventario.list();
 //     // inventario.insert(item1);
 //     // inventario.insert(item2);
@@ -42,5 +50,7 @@
 
 TEST_CASE("Sistema + Menu")
 {
-    Sistema sistema();
+    Sistema sistema = Sistema();
+    // sistema.criarPersonagem();
+    sistema.printText("TEXTO TESTE TEXTO TESTE");
 }

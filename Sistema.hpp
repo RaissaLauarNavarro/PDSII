@@ -8,7 +8,8 @@ class Sistema
 {
 public:
     Sistema();
-    void criarPersonagem(const char *Name);
+    void criarPersonagem();
+    void printText(const std::string texto);
     // // virtual ~StorageManager();
     // void write(const T &data);
     // void read(const T &data, int totalRegistros);
@@ -18,4 +19,4 @@ private:
     Player _player;
 };
 
-#include "StorageManager.tpp"
+// #include "StorageManager.tpp"

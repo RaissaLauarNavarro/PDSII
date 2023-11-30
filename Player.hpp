@@ -7,7 +7,10 @@ class Player
 {
 public:
     Player();
-    Player(const std::string name, const std::string classe);
+    Player(const std::string name);
+    void functeste();
+    void printInventory();
+    Inventory &getInventory();
     // // virtual ~StorageManager();
     // void write(const T &data);
     // void read(const T &data, int totalRegistros);
@@ -15,9 +18,8 @@ public:
 
 private:
     std::string _name;
-    std::string _classe;
     float _nivel;
     Inventory _inventario;
 };
 
-#include "StorageManager.tpp"
+// #include "StorageManager.tpp"

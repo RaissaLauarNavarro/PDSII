@@ -8,7 +8,7 @@ template <typename T>
 StorageManager<T>::StorageManager(char const *file_path)
 {
     _file.open(file_path);
-};
+}
 // StorageManager<T>::StorageManager(char const *file_path) : _file(fopen(file_path, "w")){};
 // StorageManager::~StorageManager()
 // {
