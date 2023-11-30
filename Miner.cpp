@@ -11,15 +11,15 @@
 
 Inventory Miner::ore(Inventory inventario){
     std::vector<Item> mineriosPossiveis;
-    mineriosPossiveis.push_back(Item(200, "Comum1", 5.00, 0));
-    mineriosPossiveis.push_back(Item(201, "Comum2", 5.50, 0));
-    mineriosPossiveis.push_back(Item(202, "Comum3", 6.00, 0));
-    mineriosPossiveis.push_back(Item(203, "Comum4", 6.50, 0));
-    mineriosPossiveis.push_back(Item(204, "Raro", 25.00, 0));
-    mineriosPossiveis.push_back(Item(205, "Lemdário", 50.00, 0));
+    mineriosPossiveis.push_back(Item(200, "Pedra", 1.00, 0));
+    mineriosPossiveis.push_back(Item(201, "Carvao", 2.00, 0));
+    mineriosPossiveis.push_back(Item(202, "Ferro", 5.00, 0));
+    mineriosPossiveis.push_back(Item(203, "Ouro", 15.00, 0));
+    mineriosPossiveis.push_back(Item(204, "Esmeralda", 20.00, 0));
+    mineriosPossiveis.push_back(Item(205, "Diamante", 25.00, 0));
 
     // Seed a função rand() com o tempo atual para obter números verdadeiramente aleatórios
-    // Assim, ocorre um sorteio do peixe a ser pescado
+    // Assim, ocorre um sorteio do minerio a ser mineirado
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int indiceAleatorio = std::rand() % mineriosPossiveis.size();
     inventario.insert(mineriosPossiveis[indiceAleatorio].getId(), mineriosPossiveis[indiceAleatorio]);

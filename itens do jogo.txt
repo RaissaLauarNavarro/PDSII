@@ -11,3 +11,11 @@ Item(105, "Lemdário", 50.00, 0)
 
 Item(12, "Bacon", 5.00, 0)
 Item(13, "Cenoura", 4.00, 0)
+
+Minérios:
+Item(200, "Pedra", 1.00, 0)
+Item(201, "Carvao", 2.00, 0)
+Item(202, "Ferro", 5.00, 0)
+Item(203, "Ouro", 15.00, 0)
+Item(204, "Esmeralda", 20.00, 0)
+Item(205, "Diamante", 25.00, 0)
