@@ -9,7 +9,7 @@
 #include "Item.hpp"
 #include "inventory.hpp"
 
-Inventory Miner::ore(Inventory inventario){
+void Miner::ore(Inventory* inventario){
     std::vector<Item> mineriosPossiveis;
     mineriosPossiveis.push_back(Item(200, "Pedra", 1.00, 0));
     mineriosPossiveis.push_back(Item(201, "Carvao", 2.00, 0));
@@ -22,13 +22,11 @@ Inventory Miner::ore(Inventory inventario){
     // Assim, ocorre um sorteio do minerio a ser mineirado
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int indiceAleatorio = std::rand() % mineriosPossiveis.size();
-    inventario.insert(mineriosPossiveis[indiceAleatorio].getId(), mineriosPossiveis[indiceAleatorio]);
-
-    return inventario;
+    inventario->insert(mineriosPossiveis[indiceAleatorio].getId(), mineriosPossiveis[indiceAleatorio]);
 }
 
-Inventory Miner::refine(Inventory inventario) {
-    std::map<int, std::pair<Item, unsigned> > itens = inventario.list();
+void Miner::refine(Inventory* inventario) {
+    std::map<int, std::pair<Item, unsigned> > itens = inventario->list();
 
     for (auto& entry : itens) {
         Item& item = entry.second.first;
@@ -37,5 +35,4 @@ Inventory Miner::refine(Inventory inventario) {
             //substituir itens
         }
     }
-    return inventario;
 }

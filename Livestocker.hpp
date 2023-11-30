@@ -8,11 +8,11 @@ class Livestocker{
         /// @param quantidade número de bacons a serem obtidos
         /// @param inventario invetário do jogador com seus itens
         /// @return o inventário com seus valores alterados
-        Inventory getBacon(int quantidade, Inventory inventario);
+        void getBacon(int quantidade, Inventory* inventario);
 
         /// @brief Substitui o trigo semente por ovo
         /// @param quantidade número de ovos a serem obtidos
         /// @param inventario invetário do jogador com seus itens
         /// @return o inventário com seus valores alterados
-        Inventory getEgg(int quantidade, Inventory inventario);
+        void getEgg(int quantidade, Inventory* inventario);
 };
