@@ -1,0 +1,27 @@
+1- Pescador
+    - Pescar peixe 
+    - Limpar peixes (aumenta o preço em 10%)
+2- Agricultor
+    - Obter trigo (usado para obter ovo)
+    - Obter cenoura (usada para obter bacon)
+3- Pecuarista
+    - Obter bacon
+    - Obter ovo
+4- Mineiro
+    - Mineirar
+    - Refinar minérios (necessário para melhorar ferrramentas)
+5- Ferreiro
+    - Melhorar Ferramentas
+
+
+
+#include <ctime>  
+#include <cstdlib>
+
+int sortearNumero(int tamanhoPalavras){
+    // Seed a função rand() com o tempo atual para obter números verdadeiramente aleatórios.
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
+    int indiceAleatorio = std::rand() % tamanhoPalavras;
+    return indiceAleatorio;
+}
