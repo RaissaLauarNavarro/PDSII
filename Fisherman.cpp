@@ -7,7 +7,7 @@
 
 #include "Fisherman.hpp"
 #include "Item.hpp"
-#include "inventory.hpp"
+#include "Inventory.hpp"
 
 void Fisherman::fish(Inventory* inventario){
     std::vector<Item> peixesPossiveis;

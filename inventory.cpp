@@ -1,4 +1,4 @@
-#include "inventory.hpp"
+#include "Inventory.hpp"
 #include "Item.hpp"
 #include "TerminalPalette.hpp"
 #include <iostream>

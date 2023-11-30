@@ -3,7 +3,7 @@
 
 #include "Livestocker.hpp"
 #include "Item.hpp"
-#include "inventory.hpp"
+#include "Inventory.hpp"
 
 void Livestocker::getBacon(int quantidade, Inventory* inventario){
     try{ 
