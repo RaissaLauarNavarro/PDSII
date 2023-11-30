@@ -6,13 +6,13 @@
 #include "Inventario.hpp"
 
 Inventory Farmer::getWheat(int quantidade, Inventory inventario){
-    int i = 0;
-    for (const auto& entry : inventario) {
-        if(entry.first ==   && i < quantidade){ //colocar o item semente
-            inventario.insert(2, Item(2, "Trigo", 1.00, 0)); 
-            //remover 1 semente do inventário
-            i++;
-        }
+    try{ 
+        int i = 0;
+        inventario.insert(2, Item(2, "Trigo", 1.00, 0)); 
+        //remover 1 semente do inventário
+        i++;
+    }catch(std::runtime_error const &e){
+
     }
     return inventario;
 }
@@ -20,12 +20,12 @@ Inventory Farmer::getWheat(int quantidade, Inventory inventario){
 
 Inventory Farmer::getCarrot(int quantidade, Inventory inventario){
     int i = 0;
-    for (const auto& entry : inventario) {
-        if(entry.first ==   && i < quantidade){ //colocar o item semente
-            inventario.insert(3, Item(3, "Cenoura", 1.00, 0)); 
-            //remover 1 semente do inventário
-            i++;
-        }
+    try{ 
+        inventario.insert(3, Item(3, "Cenoura", 1.00, 0)); 
+        //remover 1 semente do inventário
+        i++;
+    }catch(std::runtime_error const &e){
+
     }
     return inventario;
 }

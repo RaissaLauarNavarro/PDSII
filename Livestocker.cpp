@@ -6,26 +6,26 @@
 #include "Inventario.hpp"
 
 Inventory Livestocker::getBacon(int quantidade, Inventory inventario){
-    int i = 0;
-    for (const auto& entry : inventario) {
-        if(entry.first == 2 && i < quantidade){
-            inventario.insert(2, Item(12, "Bacon", 5.00, 0)); 
-            //remover 1 trigo do inventário
-            i++;
-        }
+    try{ 
+        int i = 0;
+        inventario.insert(2, Item(12, "Bacon", 5.00, 0)); 
+        //remover 1 cenoura do inventário
+        i++;
+    }catch(std::runtime_error const &e){
+
     }
     return inventario;
 }
 
 
 Inventory Livestocker::getEgg(int quantidade, Inventory inventario){
-    int i = 0;
-    for (const auto& entry : inventario) {
-        if(entry.first == 3  && i < quantidade){ 
+    try{
+         int i = 0;
             inventario.insert(3, Item(13, "Ovo", 4.00, 0)); 
-            //remover 1 cenoura do inventário
+            //remover 1 trigo do inventário
             i++;
-        }
+    }catch(std::runtime_error const &e){
+
     }
     return inventario;
 }
