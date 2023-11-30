@@ -1,6 +1,6 @@
 #pragma once
 #include "Item.hpp"
-#include "Inventario.hpp"
+#include "inventory.hpp"
 
 class Miner{
     public:

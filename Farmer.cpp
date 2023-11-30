@@ -3,7 +3,7 @@
 
 #include "Farmer.hpp"
 #include "Item.hpp"
-#include "Inventario.hpp"
+#include "inventory.hpp"
 
 Inventory Farmer::getWheat(int quantidade, Inventory inventario){
     try{ 

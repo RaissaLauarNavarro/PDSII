@@ -1,5 +1,6 @@
 #include "inventory.hpp"
 #include "Item.hpp"
+#include "TerminalPalette.hpp"
 #include <iostream>
 #include <set>
 
@@ -26,9 +27,13 @@ bool Inventory::insert(int id,Item item)
     return true;
 }
 
+bool Inventory::sell(int id){
+
+}
+
 std::map<int, std::pair<Item, unsigned>> Inventory::list()
 {
-    std::cout<< "--------------- LISTAGEM DO INVENTÁRIO ---------------" << std::endl;
+    std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTÁRIO ---------------" <<color::off<< std::endl;
     for(auto stack : _inventory)
     {
         std::cout << "Item: " << stack.second.first.getName() << " | Qtd:" << stack.second.second << " | Preço total:"<< stack.second.first.getUnitaryPrice()* stack.second.second<< std::endl;

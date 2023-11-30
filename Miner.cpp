@@ -7,7 +7,7 @@
 
 #include "Miner.hpp"
 #include "Item.hpp"
-#include "Inventario.hpp"
+#include "inventory.hpp"
 
 Inventory Miner::ore(Inventory inventario){
     std::vector<Item> mineriosPossiveis;

@@ -20,6 +20,8 @@ public:
     /// @return true se o elemento foi encontrado, false se não for
     bool sell(int id);
 
+    /// @brief Imprime todos os ítens do inventário
+    /// @return um map com os itens e suas quantidades
     std::map<int,std::pair<Item, unsigned>> list();
 
 private:
