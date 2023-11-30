@@ -2,7 +2,8 @@
 #include "Item.hpp"
 #include "Inventory.hpp"
 
-class Fisherman{
+class Fisherman
+{
     public:
         /// @brief Gera peixes aletórios para o usuário
         /// @param inventario ponteiro do invetário do jogador com seus itens

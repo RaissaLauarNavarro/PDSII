@@ -2,7 +2,8 @@
 #include "Item.hpp"
 #include "Inventory.hpp"
 
-class Miner{
+class Miner
+{
     public:
         /// @brief Gera peixes aletórios para o usuário
         /// @param inventario invetário do jogador com seus itens

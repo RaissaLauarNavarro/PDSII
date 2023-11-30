@@ -1,7 +1,8 @@
 #pragma once
 #include <set>
 
-class RepositorioItems{
+class RepositorioItems
+{
     RepositorioItems();
 
     bool insert(Item item)

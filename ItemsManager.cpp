@@ -1,3 +1,4 @@
+#pragma once
 #include "ItemsStorage.hpp"
 #include "Item.hpp"
 #include "StorageManager.hpp"

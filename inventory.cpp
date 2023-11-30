@@ -1,14 +1,17 @@
+#pragma once
 #include "Inventory.hpp"
 #include "Item.hpp"
 #include "TerminalPalette.hpp"
 #include <iostream>
 #include <set>
 
-Inventory::Inventory(unsigned capacity){
+Inventory::Inventory(unsigned capacity)
+{
     _inventorySize = capacity;
 }
 
-bool Inventory::insert(int id,Item item){
+bool Inventory::insert(int id,Item item)
+{
     std::cout << "Item atual sendo inserido : "<< item.getName() << std::endl; 
     
     auto find = _inventory.find(id);
@@ -25,7 +28,8 @@ bool Inventory::insert(int id,Item item){
     return true;
 }
 
-bool Inventory::remove(int id, int quantidade){
+bool Inventory::remove(int id, int quantidade)
+{
     auto find = _inventory.find(id);
     if (find != _inventory.end()) {
         if (find->second.second >= quantidade) {
@@ -39,7 +43,8 @@ bool Inventory::remove(int id, int quantidade){
     return true;
 }
 
-std::map<int, std::pair<Item, unsigned>> Inventory::list(){
+std::map<int, std::pair<Item, unsigned>> Inventory::list()
+{
     std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTÁRIO ---------------" <<color::off<< std::endl;
     for(auto stack : _inventory)
     {

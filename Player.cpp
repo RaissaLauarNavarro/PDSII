@@ -1,3 +1,4 @@
+#pragma once
 #include "Player.hpp"
 #include "Inventory.hpp"
 #include "Item.hpp"

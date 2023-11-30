@@ -1,3 +1,4 @@
+#pragma once
 #include "Menu.hpp"
 #include "Player.hpp"
 #include "Farmer.hpp"

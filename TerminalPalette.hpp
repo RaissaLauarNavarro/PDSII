@@ -1,9 +1,10 @@
+#pragma once
 #ifndef COLORS_H
 #define COLORS_H
 #include <iostream>
 
-namespace color {
-                    
+namespace color 
+{                    
   const std::string gray  = "\e[30;10m", // normal
                     grayn = "\e[30;1m", // negrito
                     grayf = "\e[30;2m", // fraco

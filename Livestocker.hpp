@@ -2,7 +2,8 @@
 #include "Item.hpp"
 #include "Inventory.hpp"
 
-class Livestocker{
+class Livestocker
+{
     public:
         /// @brief Substitui o item cenoura por bacon
         /// @param quantidade número de bacons a serem obtidos

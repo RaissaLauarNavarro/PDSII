@@ -9,7 +9,8 @@
 #include "Item.hpp"
 #include "Inventory.hpp"
 
-void Fisherman::fish(Inventory* inventario){
+void Fisherman::fish(Inventory* inventario)
+{
     std::vector<Item> peixesPossiveis;
     peixesPossiveis.push_back(Item(100, "Comum1", 5.00, 0));
     peixesPossiveis.push_back(Item(101, "Comum2", 5.50, 0));
@@ -25,7 +26,8 @@ void Fisherman::fish(Inventory* inventario){
     inventario->insert(peixesPossiveis[indiceAleatorio].getId(), peixesPossiveis[indiceAleatorio]);
 }
 
-void Fisherman::cleanFish(Inventory* inventario) {
+void Fisherman::cleanFish(Inventory* inventario) 
+{
     std::map<int, std::pair<Item, unsigned> > itens = inventario->list();
 
     for (auto& entry : itens) {
