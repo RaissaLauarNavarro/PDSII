@@ -1,6 +1,6 @@
 #pragma once
 #include "Item.hpp"
-#include "Inventario.hpp"
+#include "Inventory.hpp"
 
 class Livestocker{
     public:

@@ -1,5 +1,5 @@
 #include "ItemsStorage.hpp"
-#include "item.hpp"
+#include "Item.hpp"
 #include "StorageManager.hpp"
 
 ItemsStorage::ItemsStorage(char const *file_path) : StorageManager(file_path){};

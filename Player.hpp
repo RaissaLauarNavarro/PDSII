@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "inventory.hpp"
+#include "Inventory.hpp"
 
 class Player
 {
