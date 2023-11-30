@@ -15,7 +15,9 @@ void Livestocker::getBacon(int quantidade, Inventory* inventario)
         i++;
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Não foi possivel produzir bacon..." << color::off<<std::endl;
+        return;
     }
+    std::cout<<color::cyan << "Bacons adicionados ao seu inventário!" << color::off<<std::endl;
 }
 
 
@@ -28,5 +30,7 @@ void Livestocker::getEgg(int quantidade, Inventory* inventario)
             i++;
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Não foi possivel produzir ovo..." << color::off<<std::endl;
+        return;
     }
+    std::cout<<color::cyan << "Ovos adicionados ao seu inventário!" << color::off<<std::endl;
 }

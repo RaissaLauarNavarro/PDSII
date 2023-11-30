@@ -15,7 +15,9 @@ void Farmer::getWheat(int quantidade, Inventory* inventario)
         }
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Não foi possivel plantar o trigo..." << color::off<<std::endl;
+        return;
     }
+    std::cout<<color::cyan << "Trigos adicionados ao seu inventário!" << color::off<<std::endl;
 }
 
 
@@ -29,5 +31,7 @@ void Farmer::getCarrot(int quantidade, Inventory* inventario)
         }
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Não foi possivel plantar a cenoura..." << color::off<<std::endl;
+        return;
     }
+    std::cout<<color::cyan << "Cenouras adicionadas ao seu inventário!" << color::off<<std::endl;
 }

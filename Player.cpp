@@ -17,7 +17,7 @@ void Player::printInventory()
 {
     _inventario.list();
 }
-Inventory &Player::getInventory()
+Inventory* Player::getInventory()
 {
-    return _inventario;
+    return &_inventario;
 }

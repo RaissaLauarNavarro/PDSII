@@ -2,6 +2,7 @@
 #include "Sistema.hpp"
 #include "Player.hpp"
 #include "Menu.hpp"
+#include "TerminalPalette.hpp"
 #include <iostream>
 #include <iostream>
 #include <cstdlib>
@@ -11,7 +12,7 @@
 Sistema::Sistema() : _player(){};
 void Sistema::criarPersonagem()
 {
-    std::cout << "Bem vindo ao jogo!" << std::endl;
+    std::cout<<color::purpleb << "Bem vindo(a) a sua nova fazenda!" << color::off<< std::endl;
     std::cout << "Informe um nome para o seu personagem:";
     std::string nome;
     std::cin >> nome;

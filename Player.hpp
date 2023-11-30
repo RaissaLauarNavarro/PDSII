@@ -10,7 +10,7 @@ public:
     Player(const std::string name);
     void functeste();
     void printInventory();
-    Inventory &getInventory();
+    Inventory* getInventory();
     // // virtual ~StorageManager();
     // void write(const T &data);
     // void read(const T &data, int totalRegistros);
