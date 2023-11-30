@@ -4,13 +4,11 @@
 #include <iostream>
 #include <set>
 
-Inventory::Inventory(unsigned capacity)
-{
+Inventory::Inventory(unsigned capacity){
     _inventorySize = capacity;
 }
 
-bool Inventory::insert(int id,Item item)
-{
+bool Inventory::insert(int id,Item item){
     std::cout << "Item atual sendo inserido : "<< item.getName() << std::endl; 
     
     auto find = _inventory.find(id);
@@ -27,12 +25,21 @@ bool Inventory::insert(int id,Item item)
     return true;
 }
 
-bool Inventory::sell(int id){
-
+bool Inventory::remove(int id, int quantidade){
+    auto find = _inventory.find(id);
+    if (find != _inventory.end()) {
+        if (find->second.second >= quantidade) {
+            find->second.second -= quantidade;
+        }else{
+            return false;
+        }
+    }else{
+        return false;
+    }
+    return true;
 }
 
-std::map<int, std::pair<Item, unsigned>> Inventory::list()
-{
+std::map<int, std::pair<Item, unsigned>> Inventory::list(){
     std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTÁRIO ---------------" <<color::off<< std::endl;
     for(auto stack : _inventory)
     {
