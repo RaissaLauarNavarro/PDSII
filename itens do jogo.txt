@@ -1,3 +1,4 @@
+Item(1, "Semente", 0.50, 0)
 Item(2, "Trigo", 1.00, 0)
 Item(3, "Cenoura", 1.00, 0)
 
@@ -10,7 +11,7 @@ Item(104, "Raro", 25.00, 0)
 Item(105, "Lemdário", 50.00, 0)
 
 Item(12, "Bacon", 5.00, 0)
-Item(13, "Cenoura", 4.00, 0)
+Item(13, "Ovo", 3.00, 0)
 
 Minérios:
 Item(200, "Pedra", 1.00, 0)
