@@ -2,7 +2,8 @@
 #include "Item.hpp"
 #include "Inventory.hpp"
 
-class Farmer{
+class Farmer
+{
     public:
         /// @brief Substitui o item semente por trigo
         /// @param quantidade número de trigos a serem obtidos
