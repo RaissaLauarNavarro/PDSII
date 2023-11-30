@@ -1,16 +1,17 @@
 #pragma once
 #include "Item.hpp"
-#include "Inventario.hpp"
+#include "Inventory.hpp"
 
-class Miner{
+class Miner
+{
     public:
         /// @brief Gera peixes aletórios para o usuário
         /// @param inventario invetário do jogador com seus itens
         /// @return o inventário com seus valores alterados
-        Inventory ore(Inventory inventario);
+        void ore(Inventory* inventario);
 
         /// @brief Aumenta o valor de venda dos peixes em 10% 
         /// @param inventario invetário do jogador com seus itens
         /// @return o inventário com seus valores alterados
-        Inventory refine(Inventory inventario);
+        void refine(Inventory* inventario);
 };

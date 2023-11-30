@@ -1,16 +1,15 @@
 #pragma once
 #include "Item.hpp"
-#include "Inventario.hpp"
+#include "Inventory.hpp"
 
-class Fisherman{
+class Fisherman
+{
     public:
         /// @brief Gera peixes aletórios para o usuário
-        /// @param inventario invetário do jogador com seus itens
-        /// @return o inventário com seus valores alterados
-        Inventory fish(Inventory inventario);
+        /// @param inventario ponteiro do invetário do jogador com seus itens
+        void fish(Inventory* inventario);
 
         /// @brief Aumenta o valor de venda dos peixes em 10% 
-        /// @param inventario invetário do jogador com seus itens
-        /// @return o inventário com seus valores alterados
-        Inventory cleanFish(Inventory inventario);
+        /// @param inventario ponteiro do invetário do jogador com seus itens
+        void cleanFish(Inventory* inventario);
 };
