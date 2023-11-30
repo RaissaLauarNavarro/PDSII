@@ -2,33 +2,40 @@
 
 #include "Item.hpp"
 
-Item::Item(int id, std::string name, float price, bool status){
-    id = _id;
-    name = _name;
-    price = _price;
-    status = _status;
+Item::Item(int id, std::string name, double price, bool status)
+{
+    _id = id;
+    _name = name;
+    _price = price;
+    _status = status;
 }
 
-std::string Item::getName(){
+std::string Item::getName()
+{
     return _name;
 }
 
-int Item::getId(){
+int Item::getId()
+{
     return _id;
 }
 
-float Item::getUnitaryPrice(){
+double Item::getUnitaryPrice()
+{
     return _price;
 }
 
- bool Item::getStatus(){
+bool Item::getStatus()
+{
     return _status;
 }
-    
-void Item::changePrice(float novo){
+
+void Item::changePrice(double novo)
+{
     _price = novo;
 }
 
-void Item::changeStatus(){
+void Item::changeStatus()
+{
     _status != _status;
 }
