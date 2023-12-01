@@ -3,6 +3,7 @@
 #define COLORS_H
 #include <iostream>
 
+/// @brief biblioteca para adição de cores no terminal
 namespace color 
 {                    
   const std::string gray  = "\e[30;10m", // normal

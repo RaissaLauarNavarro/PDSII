@@ -3,12 +3,12 @@ Item(2, "Trigo", 1.00, 0)
 Item(3, "Cenoura", 1.00, 0)
 
 Peixes:
-Item(100, "Comum1", 5.00, 0)
-Item(101, "Comum2", 5.50, 0)
-Item(102, "Comum3", 6.00, 0)
-Item(103, "Comum4", 6.50, 0)
-Item(104, "Raro", 25.00, 0)
-Item(105, "Lemdário", 50.00, 0)
+Item(100, "Peixe comum 1", 5.00, 0)
+Item(101, "Peixe comum 2", 5.50, 0)
+Item(102, "Peixe comum 3", 6.00, 0
+Item(103, "Peixe comum 4", 6.50, 0)
+Item(104, "Peixe raro", 25.00, 0)
+Item(105, "Peixe lendário", 50.00, 0)
 
 Item(12, "Bacon", 5.00, 0)
 Item(13, "Ovo", 3.00, 0)

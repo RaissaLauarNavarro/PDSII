@@ -10,7 +10,10 @@ public:
     Player(const std::string name);
     void functeste();
     void printInventory();
-    Inventory &getInventory();
+    void addXp(float newXp);
+    void displayProfile();
+    float getLevel();
+    Inventory* getInventory();
     // // virtual ~StorageManager();
     // void write(const T &data);
     // void read(const T &data, int totalRegistros);
@@ -18,7 +21,8 @@ public:
 
 private:
     std::string _name;
-    float _nivel;
+    float _level;
+    float _xp;
     Inventory _inventario;
 };
 

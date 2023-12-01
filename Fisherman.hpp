@@ -6,10 +6,10 @@ class Fisherman
 {
     public:
         /// @brief Gera peixes aletórios para o usuário
-        /// @param inventario ponteiro do invetário do jogador com seus itens
-        void fish(Inventory* inventario);
+        /// @param player ponteiro o jogador
+        void fish(Player* p);
 
         /// @brief Aumenta o valor de venda dos peixes em 10% 
-        /// @param inventario ponteiro do invetário do jogador com seus itens
-        void cleanFish(Inventory* inventario);
+        /// @param player ponteiro o jogador
+        void cleanFish(Player* p);
 };

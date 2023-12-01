@@ -9,6 +9,8 @@ public:
     /// @param capacity quantidade de elementos máxima do inventário
     Inventory(unsigned capacity);
 
+    bool hasItem(int id, unsigned quantidade);
+
     /// @brief Insere um item no inventário do player
     /// @param item item a ser inserido no inventario
     /// @param id id do item a ser inserido 
@@ -18,7 +20,7 @@ public:
     /// @brief Insere um item no inventário do player
     /// @param item item a ser vendido e retirado do inventario
     /// @return true se o elemento foi encontrado, false se não for
-    bool remove(int id, int quantidade);
+    bool remove(int id, unsigned quantidade);
 
     /// @brief Imprime todos os ítens do inventário
     /// @return um map com os itens e suas quantidades

@@ -1,4 +1,3 @@
-#pragma once
 #include <string>
 
 #include "Item.hpp"
@@ -38,5 +37,5 @@ void Item::changePrice(double novo)
 
 void Item::changeStatus()
 {
-    _status != _status;
+    _status = !_status;
 }
