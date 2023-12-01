@@ -27,7 +27,7 @@ void Miner::ore(Player* p)
 
     p->getInventory()->insert(mineriosPossiveis[indiceAleatorio].getId(), mineriosPossiveis[indiceAleatorio]);
     p->addXp(mineriosPossiveis[indiceAleatorio].getUnitaryPrice() *2.0);
-    std::cout<<color::cyan << "Você mineirou 1 " << mineriosPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
+    std::cout<<color::cyan << "Voce mineirou 1 " << mineriosPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
 }
 
 void Miner::refine(Player* p) 
@@ -44,5 +44,5 @@ void Miner::refine(Player* p)
         }
     }
     p->addXp(15.0);
-    std::cout<<color::cyan << "Agora seus minérios valem mais!" << color::off<<std::endl;
+    std::cout<<color::cyan << "Agora seus minerios valem mais!" << color::off<<std::endl;
 }

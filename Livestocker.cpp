@@ -14,6 +14,8 @@ void Livestocker::getBacon(int quantidade, Player* p)
                 p->getInventory()->insert(12, Item(12, "Bacon", 5.00, 0)); 
                 p->getInventory()->remove(3, 1);
             }
+        }else{
+            throw std::runtime_error("Não foi encontrada cenoura");
         }
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Nao foi possivel produzir bacon... verifique se possui todos os itens necessarios" << color::off<<std::endl;
@@ -32,6 +34,8 @@ void Livestocker::getEgg(int quantidade, Player* p)
                 p->getInventory()->insert(13, Item(13, "Ovo", 3.00, 0)); 
                 p->getInventory()->remove(2, quantidade);
             }
+        }else{
+            throw std::runtime_error("Não foi encontrado trigo");
         }
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Nao foi possivel produzir ovo... verifique se possui todos os itens necessarios" << color::off<<std::endl;

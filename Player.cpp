@@ -39,3 +39,12 @@ Inventory* Player::getInventory()
 {
     return &_inventario;
 }
+
+void Player::displayProfile()
+{
+    std::cout<<color::blues << "--------------- MEU PERFIL ---------------" <<color::off<< std::endl;
+    std::cout<<color::bluen << "Nome de jogador: " << _name <<color::off<< std::endl;
+    std::cout<<color::bluen << "Nivel: " << _level <<color::off<< std::endl;
+    std::cout<<color::bluen << "Pontos de experiencia: " << _xp <<color::off<< std::endl;
+    std::cout << std::endl;
+}

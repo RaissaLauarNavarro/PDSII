@@ -11,6 +11,7 @@ public:
     void functeste();
     void printInventory();
     void addXp(float newXp);
+    void displayProfile();
     float getLevel();
     Inventory* getInventory();
     // // virtual ~StorageManager();

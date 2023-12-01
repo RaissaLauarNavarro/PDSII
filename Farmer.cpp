@@ -35,6 +35,8 @@ void Farmer::getCarrot(int quantidade, Player* p)
                 p->getInventory()->remove(1, 1);
                 p->addXp(15.0);
             }
+        }else{
+            throw std::runtime_error("Não foi encontrada semente");
         }
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Nao foi possivel plantar a cenoura... verifique se possui todos os itens necessarios" << color::off<<std::endl;

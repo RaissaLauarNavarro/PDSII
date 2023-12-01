@@ -28,8 +28,9 @@ void Menu::listarAtividades(Player *p)
         std::cout <<color::green << "       6- Limpar os peixes" << color::off<< std::endl;
         std::cout <<color::green << "       7- Minerar" << color::off<< std::endl;
         std::cout <<color::green << "       8- Refinar os minerios" << color::off<< std::endl;
-        std::cout <<color::green << "       9- Ver inventario" << color::off<< std::endl;
-        std::cout <<color::green << "       10- Loja" << color::off<< std::endl;
+        std::cout <<color::green << "       9- Loja" << color::off<< std::endl;
+        std::cout <<color::green << "       10- Ver inventario" << color::off<< std::endl;
+        std::cout <<color::green << "       11- Ver perfil" << color::off<< std::endl;
         std::cout <<color::green << "       0- Sair" << color::off<< std::endl;
 
         do {
@@ -37,10 +38,10 @@ void Menu::listarAtividades(Player *p)
             if (std::cin.fail()) {
                 std::cin.clear();
                 std::cout<<color::redf << "Digite uma tarefa válida" << color::off<<std::endl;
-            } else if (option < 0 || option > 10) {
+            } else if (option < 0 || option > 11) {
                 std::cout<<color::grayb << "Uhmm, ainda nao sabemos fazer essa tarefa..." << color::off<<std::endl;
             }
-        } while (std::cin.fail() || option < 0 || option > 10);
+        } while (std::cin.fail() || option < 0 || option > 11);
 
         switch (option)
         {
@@ -77,10 +78,13 @@ void Menu::listarAtividades(Player *p)
             m.refine(p);
             break;
         case 9:
-            p->printInventory();
+            // exibir a loja
             break;
         case 10:
-            // exibir a loja
+            p->printInventory();
+            break;
+        case 11:
+            p->displayProfile();
             break;
         default:
             break;
