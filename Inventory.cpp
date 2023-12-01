@@ -12,7 +12,7 @@ Inventory::Inventory(unsigned capacity)
 
 bool Inventory::insert(int id,Item item)
 {
-    std::cout << "Item atual sendo inserido : "<< item.getName() << std::endl; 
+    std::cout <<color::grayf << "Item atual sendo inserido : " << color::off << std::endl;
     
     auto find = _inventory.find(id);
     if(_inventory.find(id) != _inventory.end())
@@ -23,17 +23,19 @@ bool Inventory::insert(int id,Item item)
         find = _inventory.find(id);
     }
     
-    std::cout << "Qtd do item atual:" << find->second.second << std::endl;
+    std::cout <<color::grayf << "Qtd do item atual:" << find->second.second << color::off << std::endl;
 
     return true;
 }
 
-bool Inventory::remove(int id, int quantidade)
+bool Inventory::remove(int id, unsigned quantidade)
 {
     auto find = _inventory.find(id);
     if (find != _inventory.end()) {
         if (find->second.second >= quantidade) {
             find->second.second -= quantidade;
+        }else{
+
         }
     }
     return true;
@@ -41,7 +43,7 @@ bool Inventory::remove(int id, int quantidade)
 
 std::map<int, std::pair<Item, unsigned>> Inventory::list()
 {
-    std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTÁRIO ---------------" <<color::off<< std::endl;
+    std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTARIO ---------------" <<color::off<< std::endl;
     for(auto stack : _inventory)
     {
         std::cout << "Item: " << stack.second.first.getName() << " | Qtd:" << stack.second.second << " | Preço total:"<< stack.second.first.getUnitaryPrice()* stack.second.second<< std::endl;

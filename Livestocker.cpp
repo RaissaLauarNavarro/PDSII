@@ -10,10 +10,10 @@
 void Livestocker::getBacon(int quantidade, Player* p)
 {
     try{ 
-        int i = 0;
-        p->getInventory()->insert(12, Item(12, "Bacon", 5.00, 0)); 
-        p->getInventory()->remove(3, quantidade);
-        i++;
+        for(int i=0; i<=quantidade; i++){
+            p->getInventory()->insert(12, Item(12, "Bacon", 5.00, 0)); 
+            p->getInventory()->remove(3, 1);
+        }
     }catch(std::runtime_error const &e){
         std::cout<<color::redi << "Não foi possivel produzir bacon..." << color::off<<std::endl;
         return;

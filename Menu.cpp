@@ -20,7 +20,7 @@ void Menu::listarAtividades(Player *p)
     Miner m;
     do
     {
-        std::cout<<color::greens << "Atividades disponíveis:" << color::off<<std::endl;
+        std::cout<<color::greens << "Atividades disponiveis:" << color::off<<std::endl;
         std::cout <<color::green << "       1- Colher trigo" << color::off<< std::endl;
         std::cout <<color::green << "       2- Colher cenouras" << color::off<< std::endl;
         std::cout <<color::green << "       3- Alimentar as galinhas" << color::off<< std::endl;
@@ -29,7 +29,7 @@ void Menu::listarAtividades(Player *p)
         std::cout <<color::green << "       6- Limpar os peixes" << color::off<< std::endl;
         std::cout <<color::green << "       7- Minerar" << color::off<< std::endl;
         std::cout <<color::green << "       8- Refinar os minérios" << color::off<< std::endl;
-        std::cout <<color::green << "       9- Ver inventário" << color::off<< std::endl;
+        std::cout <<color::green << "       9- Ver inventario" << color::off<< std::endl;
         std::cout <<color::green << "       10- Loja" << color::off<< std::endl;
         std::cout <<color::green << "       0- Sair" << color::off<< std::endl;
 

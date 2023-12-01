@@ -48,11 +48,11 @@ void Sistema::criarPersonagem()
     //         break;
     //     }
     // } while (classe != 1 && classe != 2 && classe != 3 && classe != 4);
-    _player = Player(nome);
+    // _player = Player(nome);
 
-    Menu menuteste = Menu();
+    // Menu menuteste = Menu();
 
-    menuteste.listarAtividades(_player);
+    // menuteste.listarAtividades(_player);
 
     _player.printInventory();
 };

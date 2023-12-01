@@ -3,8 +3,8 @@
 #include <iostream>
 #include "doctest.h"
 
-#include "inventory.hpp"
-#include "inventory.cpp"
+#include "Inventory.hpp"
+#include "Inventory.cpp"
 #include "Item.hpp"
 #include "Item.cpp"
 #include "Sistema.hpp"
