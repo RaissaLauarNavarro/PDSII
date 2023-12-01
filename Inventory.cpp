@@ -34,11 +34,7 @@ bool Inventory::remove(int id, int quantidade)
     if (find != _inventory.end()) {
         if (find->second.second >= quantidade) {
             find->second.second -= quantidade;
-        }else{
-            return false;
         }
-    }else{
-        return false;
     }
     return true;
 }

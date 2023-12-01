@@ -4,8 +4,8 @@
 #include "Item.hpp"
 #include <iostream>
 
-Player::Player() : _name(""), _nivel(0), _inventario(0){};
-Player::Player(const std::string name) : _name(name), _nivel(0), _inventario(10){};
+Player::Player() : _name(""), _level(0), _xp(0), _inventario(0){};
+Player::Player(const std::string name) : _name(name), _level(0), _xp(0), _inventario(10){};
 
 void Player::functeste()
 {
@@ -17,6 +17,21 @@ void Player::printInventory()
 {
     _inventario.list();
 }
+
+void Player::addXp(float newXp)
+{
+    _xp += newXp;
+    if(_xp == 100.0){
+        _level++;
+        _xp = 0;
+    }
+}
+
+float Player::getLevel()
+{
+    return _level;
+}
+
 Inventory* Player::getInventory()
 {
     return &_inventario;

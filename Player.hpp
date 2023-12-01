@@ -10,6 +10,8 @@ public:
     Player(const std::string name);
     void functeste();
     void printInventory();
+    void addXp(float newXp);
+    float getLevel();
     Inventory* getInventory();
     // // virtual ~StorageManager();
     // void write(const T &data);
@@ -18,7 +20,8 @@ public:
 
 private:
     std::string _name;
-    float _nivel;
+    float _level;
+    float _xp;
     Inventory _inventario;
 };
 

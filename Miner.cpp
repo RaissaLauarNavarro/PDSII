@@ -5,12 +5,13 @@
 #include <algorithm>
 #include <vector>
 
+#include "Player.hpp"
 #include "Miner.hpp"
 #include "Item.hpp"
 #include "Inventory.hpp"
 #include "TerminalPalette.hpp"
 
-void Miner::ore(Inventory* inventario)
+void Miner::ore(Player* p)
 {
     std::vector<Item> mineriosPossiveis;
     mineriosPossiveis.push_back(Item(200, "Pedra", 1.00, 0));
@@ -24,13 +25,15 @@ void Miner::ore(Inventory* inventario)
     // Assim, ocorre um sorteio do peixe a ser pescado
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int indiceAleatorio = std::rand() % mineriosPossiveis.size();
-    inventario->insert(mineriosPossiveis[indiceAleatorio].getId(), mineriosPossiveis[indiceAleatorio]);
+
+    p->getInventory()->insert(mineriosPossiveis[indiceAleatorio].getId(), mineriosPossiveis[indiceAleatorio]);
+    p->addXp(mineriosPossiveis[indiceAleatorio].getUnitaryPrice() *2.0);
     std::cout<<color::cyan << "Você mineirou 1 " << mineriosPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
 }
 
-void Miner::refine(Inventory* inventario) 
+void Miner::refine(Player* p) 
 {
-    std::map<int, std::pair<Item, unsigned> > itens = inventario->list();
+    std::map<int, std::pair<Item, unsigned> > itens = p->getInventory()->list();
 
     for (auto& entry : itens) {
         Item& item = entry.second.first;

@@ -5,12 +5,13 @@
 #include <algorithm>
 #include <vector>
 
+#include "Player.hpp"
 #include "Fisherman.hpp"
 #include "Item.hpp"
 #include "Inventory.hpp"
 #include "TerminalPalette.hpp"
 
-void Fisherman::fish(Inventory* inventario)
+void Fisherman::fish(Player* p)
 {
     std::vector<Item> peixesPossiveis;
     peixesPossiveis.push_back(Item(100, "Comum 1", 5.00, 0));
@@ -23,21 +24,57 @@ void Fisherman::fish(Inventory* inventario)
     // Seed a função rand() com o tempo atual para obter números verdadeiramente aleatórios
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int indiceAleatorio = std::rand() % peixesPossiveis.size();
-    inventario->insert(peixesPossiveis[indiceAleatorio].getId(), peixesPossiveis[indiceAleatorio]);
+
+    p->getInventory()->insert(peixesPossiveis[indiceAleatorio].getId(), peixesPossiveis[indiceAleatorio]);
+    p->addXp(peixesPossiveis[indiceAleatorio].getUnitaryPrice() *2.0);
     std::cout<<color::cyan << "Você pescou um peixe " << peixesPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
 }
 
-void Fisherman::cleanFish(Inventory* inventario) 
+// void Fisherman::cleanFish(Player* p) 
+// {
+
+//     for (auto& entry : itens) {
+//         Item& item = entry.second.first;
+
+//         if ((item.getId() >= 100 || item.getId() <= 105) && !item.getStatus()) {
+//             item.changePrice(item.getUnitaryPrice() * 0.1);
+//             item.changeStatus();
+//         }
+//     }
+//     p->addXp(15.0);
+//     std::cout<<color::cyan << "Agora seus peixes valem mais!" << color::off<<std::endl;
+// }
+
+//     try{ 
+//         for(int i=0; i<=quantidade; i++){
+//             p->getInventory()->insert(2, Item(2, "Trigo", 1.00, 0)); 
+//             p->getInventory()->remove(1, quantidade);
+//             p->addXp(15.0);
+//         }
+//     }catch(std::runtime_error const &e){
+//         std::cout<<color::redi << "Não foi possivel plantar o trigo..." << color::off<<std::endl;
+//         return;
+//     }
+
+//     std::map<int, std::pair<Item, unsigned> > itens = p->getInventory()->list();
+
+void Fisherman::cleanFish(Player* p)
 {
-    std::map<int, std::pair<Item, unsigned> > itens = inventario->list();
+    Inventory* playerInventory = p->getInventory();
 
-    for (auto& entry : itens) {
-        Item& item = entry.second.first;
+    // Iterating through the player's inventory items
+    for (auto& entry : playerInventory->list()) {
+        Item& item = entry.second;
 
-        if ((item.getId() >= 100 || item.getId() <= 105) && !item.getStatus()) {
-            item.changePrice(item.getUnitaryPrice() * 0.1);
+        if ((item.getId() >= 100 && item.getId() <= 105) && !item.getStatus()) {
+            double cleanedPrice = item.getUnitaryPrice() * 0.1;
+            item.changePrice(cleanedPrice);
             item.changeStatus();
+
+            // std::cout << color::cyan << "Você limpou um peixe " << item.getName() << ". Novo preço: " << cleanedPrice << color::off << std::endl;
         }
     }
-    std::cout<<color::cyan << "Agora seus peixes valem mais!" << color::off<<std::endl;
+
+    p->addXp(15.0);
+    std::cout << color::cyan << "Agora seus peixes valem mais!" << color::off << std::endl;
 }
