@@ -48,34 +48,34 @@ void Menu::listarAtividades(Player *p)
         case 1:
             std::cout<<color::grayb << "Quantos trigos deseja plantar?" << color::off<<std::endl;
             std::cin >> quantidade;
-            f.getWheat(quantidade, p->getInventory());
+            f.getWheat(quantidade, p);
             break;
         case 2:
             std::cout<<color::grayb << "Quantas cenouras deseja plantar?" << color::off<<std::endl;
             std::cin >> quantidade;
-            f.getCarrot(quantidade, p->getInventory());
+            f.getCarrot(quantidade, p);
             break;
         case 3:
             std::cout<<color::grayb << "Quantas galinhas deseja alimentar?" << color::off<<std::endl;
             std::cin >> quantidade;
-            l.getEgg(quantidade, p->getInventory());
+            l.getEgg(quantidade, p);
             break;
         case 4:
             std::cout<<color::grayb << "Quantos porcos deseja cuidar?" << color::off<<std::endl;
             std::cin >> quantidade;
-            l.getBacon(quantidade, p->getInventory());
+            l.getBacon(quantidade, p);
             break;
         case 5:
-            i.fish(p->getInventory());
+            i.fish(p);
             break;
         case 6:
-            i.cleanFish(p->getInventory());
+            i.cleanFish(p);
             break;
         case 7:
-            m.ore(p->getInventory());
+            m.ore(p);
             break;
         case 8:
-            m.refine(p->getInventory());
+            m.refine(p);
             break;
         case 9:
             p->printInventory();
