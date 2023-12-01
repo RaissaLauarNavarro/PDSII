@@ -1,4 +1,7 @@
-#pragma once
+#include "Farmer.hpp"
+#include "Livestocker.hpp"
+#include "Fisherman.hpp"
+#include "Miner.hpp"
 #include "Player.hpp"
 #include "Inventory.hpp"
 #include "Item.hpp"

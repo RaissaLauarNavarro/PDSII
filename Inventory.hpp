@@ -9,6 +9,8 @@ public:
     /// @param capacity quantidade de elementos máxima do inventário
     Inventory(unsigned capacity);
 
+    bool hasItem(int id, unsigned quantidade);
+
     /// @brief Insere um item no inventário do player
     /// @param item item a ser inserido no inventario
     /// @param id id do item a ser inserido 

@@ -1,4 +1,3 @@
-#pragma once
 #include "Inventory.hpp"
 #include "Item.hpp"
 #include "TerminalPalette.hpp"
@@ -8,6 +7,12 @@
 Inventory::Inventory(unsigned capacity)
 {
     _inventorySize = capacity;
+}
+
+bool Inventory::hasItem(int id, unsigned quantidade)
+{
+    auto find = _inventory.find(id);
+    return (find != _inventory.end() && find->second.second >= quantidade);
 }
 
 bool Inventory::insert(int id,Item item)

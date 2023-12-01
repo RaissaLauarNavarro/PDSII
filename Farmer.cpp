@@ -1,6 +1,4 @@
-#pragma once
 #include <iostream>
-#include <cassert>
 
 #include "Farmer.hpp"
 #include "Item.hpp"
@@ -11,13 +9,17 @@
 void Farmer::getWheat(int quantidade, Player* p)
 {
     try{ 
-        for(int i=0; i<quantidade; i++){
-            assert(p->getInventory()->remove(1, 1) == true);
-            p->getInventory()->insert(2, Item(2, "Trigo", 1.00, 0)); 
-            p->addXp(15.0);
+        if (p->getInventory()->hasItem(1, quantidade)) {
+            for(int i=0; i<quantidade; i++){
+                p->getInventory()->remove(1, 1);
+                p->getInventory()->insert(2, Item(2, "Trigo", 1.00, 0)); 
+                p->addXp(15.0);
+            }
+        }else{
+            throw std::runtime_error("Não foi encontrada semente");
         }
     }catch(std::runtime_error const &e){
-        std::cout<<color::redi << "Nao foi possivel plantar o trigo..." << color::off<<std::endl;
+        std::cout<<color::redi << "Nao foi possivel plantar o trigo... verifique se possui todos os itens necessarios" << color::off<<std::endl;
         return;
     }
     std::cout<<color::cyan << "Trigos adicionados ao seu inventario!" << color::off<<std::endl;
@@ -27,13 +29,15 @@ void Farmer::getWheat(int quantidade, Player* p)
 void Farmer::getCarrot(int quantidade, Player* p)
 {
     try{ 
-        for(int i=0; i<quantidade; i++){
-            p->getInventory()->insert(3, Item(3, "Cenoura", 1.00, 0)); 
-            p->getInventory()->remove(1, 1);
-            p->addXp(15.0);
+        if (p->getInventory()->hasItem(1, quantidade)) {
+            for(int i=0; i<quantidade; i++){
+                p->getInventory()->insert(3, Item(3, "Cenoura", 1.00, 0)); 
+                p->getInventory()->remove(1, 1);
+                p->addXp(15.0);
+            }
         }
     }catch(std::runtime_error const &e){
-        std::cout<<color::redi << "Nao foi possivel plantar a cenoura..." << color::off<<std::endl;
+        std::cout<<color::redi << "Nao foi possivel plantar a cenoura... verifique se possui todos os itens necessarios" << color::off<<std::endl;
         return;
     }
     std::cout<<color::cyan << "Cenouras adicionadas ao seu inventario!" << color::off<<std::endl;

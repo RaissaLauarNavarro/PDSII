@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 
 #include "Player.hpp"
@@ -10,12 +9,14 @@
 void Livestocker::getBacon(int quantidade, Player* p)
 {
     try{ 
-        for(int i=0; i<quantidade; i++){
-            p->getInventory()->insert(12, Item(12, "Bacon", 5.00, 0)); 
-            p->getInventory()->remove(3, 1);
+        if (p->getInventory()->hasItem(3, quantidade)) {
+            for(int i=0; i<quantidade; i++){
+                p->getInventory()->insert(12, Item(12, "Bacon", 5.00, 0)); 
+                p->getInventory()->remove(3, 1);
+            }
         }
     }catch(std::runtime_error const &e){
-        std::cout<<color::redi << "Nao foi possivel produzir bacon..." << color::off<<std::endl;
+        std::cout<<color::redi << "Nao foi possivel produzir bacon... verifique se possui todos os itens necessarios" << color::off<<std::endl;
         return;
     }
     p->addXp(15.0);
@@ -26,12 +27,14 @@ void Livestocker::getBacon(int quantidade, Player* p)
 void Livestocker::getEgg(int quantidade, Player* p)
 {
     try{
-         int i = 0;
-            p->getInventory()->insert(13, Item(13, "Ovo", 3.00, 0)); 
-            p->getInventory()->remove(2, quantidade);
-            i++;
+        if (p->getInventory()->hasItem(3, quantidade)) {
+            for(int i=0; i<quantidade; i++){
+                p->getInventory()->insert(13, Item(13, "Ovo", 3.00, 0)); 
+                p->getInventory()->remove(2, quantidade);
+            }
+        }
     }catch(std::runtime_error const &e){
-        std::cout<<color::redi << "Nao foi possivel produzir ovo..." << color::off<<std::endl;
+        std::cout<<color::redi << "Nao foi possivel produzir ovo... verifique se possui todos os itens necessarios" << color::off<<std::endl;
         return;
     }
     p->addXp(15.0);

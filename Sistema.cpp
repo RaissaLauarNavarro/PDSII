@@ -1,4 +1,3 @@
-#pragma once
 #include "Sistema.hpp"
 #include "Player.hpp"
 #include "Menu.hpp"

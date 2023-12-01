@@ -25,3 +25,22 @@ TEST_CASE("Mostrar Menu"){
     Menu menu;
     menu.listarAtividades(&p);
 }
+
+TEST_CASE("Obter trigo e cenoura"){
+    Player p;
+    Farmer farmer;
+    // Fisherman fisherman;
+    // Miner miner;
+    // Livestocker livestocker;
+
+    CHECK_FALSE(p.getInventory()->hasItem(1, 1));
+    p.getInventory()->insert(1, Item(1, "Semente", 0.50, 0));
+    p.getInventory()->insert(1, Item(1, "Semente", 0.50, 0));
+    p.getInventory()->insert(1, Item(1, "Semente", 0.50, 0));
+    CHECK_FALSE(p.getInventory()->hasItem(2, 2));
+    CHECK_FALSE(p.getInventory()->hasItem(3, 1));
+    farmer.getWheat(1, &p);
+    farmer.getCarrot(2, &p);
+    CHECK(p.getInventory()->hasItem(2, 1));
+    CHECK(p.getInventory()->hasItem(3, 2));
+}
