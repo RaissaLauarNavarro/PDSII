@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cassert>
 
 #include "Farmer.hpp"
 #include "Item.hpp"
@@ -10,9 +11,9 @@
 void Farmer::getWheat(int quantidade, Player* p)
 {
     try{ 
-        for(int i=0; i<=quantidade; i++){
+        for(int i=0; i<quantidade; i++){
+            assert(p->getInventory()->remove(1, 1) == true);
             p->getInventory()->insert(2, Item(2, "Trigo", 1.00, 0)); 
-            p->getInventory()->remove(1, quantidade);
             p->addXp(15.0);
         }
     }catch(std::runtime_error const &e){
@@ -26,7 +27,7 @@ void Farmer::getWheat(int quantidade, Player* p)
 void Farmer::getCarrot(int quantidade, Player* p)
 {
     try{ 
-        for(int i=0; i<=quantidade; i++){
+        for(int i=0; i<quantidade; i++){
             p->getInventory()->insert(3, Item(3, "Cenoura", 1.00, 0)); 
             p->getInventory()->remove(1, 1);
             p->addXp(15.0);

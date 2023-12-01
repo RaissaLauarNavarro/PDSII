@@ -28,7 +28,7 @@ void Menu::listarAtividades(Player *p)
         std::cout <<color::green << "       5- Pescar" << color::off<< std::endl;
         std::cout <<color::green << "       6- Limpar os peixes" << color::off<< std::endl;
         std::cout <<color::green << "       7- Minerar" << color::off<< std::endl;
-        std::cout <<color::green << "       8- Refinar os minérios" << color::off<< std::endl;
+        std::cout <<color::green << "       8- Refinar os minerios" << color::off<< std::endl;
         std::cout <<color::green << "       9- Ver inventario" << color::off<< std::endl;
         std::cout <<color::green << "       10- Loja" << color::off<< std::endl;
         std::cout <<color::green << "       0- Sair" << color::off<< std::endl;
@@ -39,7 +39,7 @@ void Menu::listarAtividades(Player *p)
                 std::cin.clear();
                 std::cout<<color::redf << "Digite uma tarefa válida" << color::off<<std::endl;
             } else if (option < 0 || option > 10) {
-                std::cout<<color::grayb << "Uhmm, ainda não sabemos fazer essa tarefa..." << color::off<<std::endl;
+                std::cout<<color::grayb << "Uhmm, ainda nao sabemos fazer essa tarefa..." << color::off<<std::endl;
             }
         } while (std::cin.fail() || option < 0 || option > 10);
 
@@ -86,5 +86,6 @@ void Menu::listarAtividades(Player *p)
         default:
             break;
         }
+        std::cout << std::endl;
     } while (option != 0);
 }
