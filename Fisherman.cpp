@@ -30,51 +30,20 @@ void Fisherman::fish(Player* p)
     std::cout<<color::cyan << "Você pescou um peixe " << peixesPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
 }
 
-// void Fisherman::cleanFish(Player* p) 
-// {
-
-//     for (auto& entry : itens) {
-//         Item& item = entry.second.first;
-
-//         if ((item.getId() >= 100 || item.getId() <= 105) && !item.getStatus()) {
-//             item.changePrice(item.getUnitaryPrice() * 0.1);
-//             item.changeStatus();
-//         }
-//     }
-//     p->addXp(15.0);
-//     std::cout<<color::cyan << "Agora seus peixes valem mais!" << color::off<<std::endl;
-// }
-
-//     try{ 
-//         for(int i=0; i<=quantidade; i++){
-//             p->getInventory()->insert(2, Item(2, "Trigo", 1.00, 0)); 
-//             p->getInventory()->remove(1, quantidade);
-//             p->addXp(15.0);
-//         }
-//     }catch(std::runtime_error const &e){
-//         std::cout<<color::redi << "Não foi possivel plantar o trigo..." << color::off<<std::endl;
-//         return;
-//     }
-
-//     std::map<int, std::pair<Item, unsigned> > itens = p->getInventory()->list();
 
 void Fisherman::cleanFish(Player* p)
 {
     Inventory* playerInventory = p->getInventory();
 
-    // Iterating through the player's inventory items
     for (auto& entry : playerInventory->list()) {
-        Item& item = entry.second;
+        Item& item = entry.second.first;
 
         if ((item.getId() >= 100 && item.getId() <= 105) && !item.getStatus()) {
-            double cleanedPrice = item.getUnitaryPrice() * 0.1;
+            double cleanedPrice = item.getUnitaryPrice() * 1.1;
             item.changePrice(cleanedPrice);
             item.changeStatus();
-
-            // std::cout << color::cyan << "Você limpou um peixe " << item.getName() << ". Novo preço: " << cleanedPrice << color::off << std::endl;
         }
     }
-
     p->addXp(15.0);
     std::cout << color::cyan << "Agora seus peixes valem mais!" << color::off << std::endl;
 }

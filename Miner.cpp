@@ -33,14 +33,17 @@ void Miner::ore(Player* p)
 
 void Miner::refine(Player* p) 
 {
-    std::map<int, std::pair<Item, unsigned> > itens = p->getInventory()->list();
+    Inventory* playerInventory = p->getInventory();
 
-    for (auto& entry : itens) {
+    for (auto& entry : playerInventory->list()) {
         Item& item = entry.second.first;
 
         if ((item.getId() >= 200 || item.getId() <= 205) && !item.getStatus()) {
-            //substituir itens
+            double refinedPrice = item.getUnitaryPrice() * 1.1;
+            item.changePrice(refinedPrice);
+            item.changeStatus();
         }
     }
-     std::cout<<color::cyan << "Agora seus minérios valem mais!" << color::off<<std::endl;
+    p->addXp(15.0);
+    std::cout<<color::cyan << "Agora seus minérios valem mais!" << color::off<<std::endl;
 }
