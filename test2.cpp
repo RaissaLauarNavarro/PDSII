@@ -44,3 +44,13 @@ TEST_CASE("Obter trigo e cenoura"){
     CHECK(p.getInventory()->hasItem(2, 1));
     CHECK(p.getInventory()->hasItem(3, 2));
 }
+
+
+TEST_CASE("Limpar Peixes"){
+    Player p;
+    Fisherman fisherman;
+    p.getInventory()->insert(105, Item(105, "Peixe lendario", 50.00, 0));
+    p.getInventory()->insert(105, Item(105, "Peixe lendario", 50.00, 0));
+    fisherman.cleanFish(&p);
+    p.getInventory()->list();
+}

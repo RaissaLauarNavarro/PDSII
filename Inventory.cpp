@@ -51,8 +51,29 @@ std::map<int, std::pair<Item, unsigned>> Inventory::list()
     std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTARIO ---------------" <<color::off<< std::endl;
     for(auto stack : _inventory)
     {
-        std::cout << "Item: " << stack.second.first.getName() << " | Qtd:" << stack.second.second << " | Preco total:"<< stack.second.first.getUnitaryPrice()* stack.second.second<< std::endl;
+        std::cout << "Item: " << stack.second.first.getName() << " | Qtd:" << stack.second.second << " | Preco total:"<< stack.second.first.getUnitaryPrice()* static_cast<double>(stack.second.second)<< std::endl;
     }
     std::cout << std::endl;
     return _inventory;
+}
+
+
+void Inventory::updateItemPrice(int id, double novoPreco)
+{
+    auto it = _inventory.find(id);
+
+    if (it != _inventory.end())
+    {
+        it->second.first.changePrice(novoPreco);
+    }
+}
+
+void Inventory::updateItemStatus(int id)
+{
+    auto it = _inventory.find(id);
+
+    if (it != _inventory.end())
+    {
+        it->second.first.changeStatus();
+    }
 }
