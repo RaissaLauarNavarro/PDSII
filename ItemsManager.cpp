@@ -7,6 +7,7 @@
 // {
 //     ;
 // }
+//TESTE 1,2,3 TESTE, VAMOS VER SE ESTÁ funcionando.
 void ItemsStorage::write(const Item item)
 {
 }
