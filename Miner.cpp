@@ -39,8 +39,8 @@ void Miner::refine(Player* p)
 
         if ((item.getId() >= 200 || item.getId() <= 205) && !item.getStatus()) {
             double refinedPrice = item.getUnitaryPrice() * 1.1;
-            item.changePrice(refinedPrice);
-            item.changeStatus();
+            playerInventory->updateItemPrice(item.getId(), refinedPrice);
+            playerInventory->updateItemStatus(item.getId());
         }
     }
     p->addXp(15.0);

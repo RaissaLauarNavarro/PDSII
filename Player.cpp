@@ -19,7 +19,7 @@ void Player::functeste()
 }
 void Player::printInventory()
 {
-    _inventario.list();
+    _inventario.printInventory();
 }
 
 void Player::addXp(float newXp)
