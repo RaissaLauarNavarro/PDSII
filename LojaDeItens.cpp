@@ -1,10 +1,9 @@
-#pragma once
+// LojaDeItens.cpp
+
 #include "LojaDeItens.hpp"
 #include <iostream>
 
-LojaDeItens::LojaDeItens()
-{
-}
+LojaDeItens::LojaDeItens(Player* player) : _player(player) {}
 
 void LojaDeItens::adicionarItem(int id, std::string nome, double preco, bool status)
 {
@@ -17,7 +16,7 @@ void LojaDeItens::removerItem(int id)
     auto it = _itens.find(id);
     if (it != _itens.end())
     {
-        delete it->second; // Liberar a memória alocada para o item
+        delete it->second;
         _itens.erase(it);
     }
 }
@@ -55,8 +54,18 @@ void LojaDeItens::comprarItem(int id)
     auto it = _itens.find(id);
     if (it != _itens.end() && it->second->getStatus())
     {
-        std::cout << "Item comprado: " << it->second->getName() << std::endl;
-        
+        float itemPrice = it->second->getUnitaryPrice();
+
+        if (_player->getMoney() >= itemPrice)
+        {
+            _player->removeMoney(itemPrice);
+            _player->getInventory()->insert(id, *it->second);
+            std::cout << "Item comprado: " << it->second->getName() << std::endl;
+        }
+        else
+        {
+            std::cout << "Dinheiro insuficiente para comprar o item." << std::endl;
+        }
     }
     else
     {
@@ -69,8 +78,16 @@ void LojaDeItens::venderItem(int id)
     auto it = _itens.find(id);
     if (it != _itens.end() && it->second->getStatus())
     {
-        std::cout << "Item vendido: " << it->second->getName() << std::endl;
-        
+        if (_player->getInventory()->hasItem(id, 1))
+        {
+            _player->addMoney(it->second->getUnitaryPrice());
+            _player->getInventory()->remove(id, 1);
+            std::cout << "Item vendido: " << it->second->getName() << std::endl;
+        }
+        else
+        {
+            std::cout << "Item não disponível para venda no inventário." << std::endl;
+        }
     }
     else
     {
