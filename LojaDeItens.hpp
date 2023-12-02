@@ -1,5 +1,3 @@
-// LojaDeItens.hpp
-
 #pragma once
 #include <map>
 #include <string>
