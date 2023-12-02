@@ -16,6 +16,8 @@
 #include "StorageManager.hpp"
 #include "Farmer.hpp"
 #include "Farmer.cpp"
+#include "LojaDeItens.hpp"
+#include "LojaDeItens.cpp"
 
 // TEST_CASE("Inserção")
 // {
