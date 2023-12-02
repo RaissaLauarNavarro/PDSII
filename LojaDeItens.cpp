@@ -4,7 +4,6 @@
 
 LojaDeItens::LojaDeItens()
 {
-    // Construtor vazio por enquanto
 }
 
 void LojaDeItens::adicionarItem(int id, std::string nome, double preco, bool status)
@@ -57,7 +56,7 @@ void LojaDeItens::comprarItem(int id)
     if (it != _itens.end() && it->second->getStatus())
     {
         std::cout << "Item comprado: " << it->second->getName() << std::endl;
-        // Implemente a lógica de compra, se necessário
+        
     }
     else
     {
@@ -71,7 +70,7 @@ void LojaDeItens::venderItem(int id)
     if (it != _itens.end() && it->second->getStatus())
     {
         std::cout << "Item vendido: " << it->second->getName() << std::endl;
-        // Implemente a lógica de venda, se necessário
+        
     }
     else
     {
