@@ -24,9 +24,22 @@ public:
     // void read(const T &data, int totalRegistros);
     // // virtual void findOne(char const *data);
 
+    /// @brief Obtém a quantidade de dinheiro do jogador
+    /// @return Quantidade de dinheiro do jogador
+    float getMoney();
+
+    /// @brief Adiciona dinheiro ao jogador
+    /// @param amount Quantidade de dinheiro a ser adicionada
+    void addMoney(float amount);
+
+    /// @brief Remove dinheiro do jogador
+    /// @param amount Quantidade de dinheiro a ser removida
+    void removeMoney(float amount);
+
 private:
     std::string _name;
     float _nivel;
+    float _money;
     Inventory _inventario;
 };
 
