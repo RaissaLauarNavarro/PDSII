@@ -3,6 +3,7 @@
 #include <string>
 #include "Item.hpp"
 #include "Player.hpp"
+#include "Inventory.hpp"
 
 class LojaDeItens
 {
