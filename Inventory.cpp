@@ -5,17 +5,13 @@
 #include <iostream>
 #include <set>
 
-/// @brief Construtor da classe Inventory.
-/// @param capacity: A capacidade inicial do inventário.
+
 Inventory::Inventory(unsigned capacity)
 {
     _inventorySize = capacity;
 }
 
-/// @brief Função para inserir um item no inventário.
-/// @param id: O identificador único do item.
-/// @param item: O objeto Item a ser inserido.
-/// @return true se a operação foi bem-sucedida, false caso contrário.
+
 bool Inventory::insert(int id,Item item)
 {
     std::cout << "Item atual sendo inserido : "<< item.getName() << std::endl; 
@@ -34,10 +30,7 @@ bool Inventory::insert(int id,Item item)
     return true;
 }
 
-/// @brief Função para remover uma quantidade específica de um item do inventário.
-/// @param id: O identificador único do item.
-/// @param quantidade: A quantidade a ser removida.
-/// @return true se a operação foi bem-sucedida, false caso contrário
+
 bool Inventory::remove(int id, int quantidade)
 {
     auto find = _inventory.find(id);
@@ -53,8 +46,7 @@ bool Inventory::remove(int id, int quantidade)
     return true;
 }
 
-/// @brief Função para listar e exibir os itens presentes no inventário.
-/// @return Um mapa contendo os itens no inventário, juntamente com suas quantidades.
+
 std::map<int, std::pair<Item, unsigned>> Inventory::list()
 {
     std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTÁRIO ---------------" <<color::off<< std::endl;
