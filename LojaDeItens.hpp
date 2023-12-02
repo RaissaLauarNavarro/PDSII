@@ -2,6 +2,7 @@
 #include <map>
 #include <string>
 #include "Item.hpp"
+#include "Player.hpp"
 
 class LojaDeItens
 {
