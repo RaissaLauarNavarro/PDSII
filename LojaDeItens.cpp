@@ -1,5 +1,4 @@
-// LojaDeItens.cpp
-
+#pragma once
 #include "LojaDeItens.hpp"
 #include <iostream>
 
