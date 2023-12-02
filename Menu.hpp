@@ -1,11 +1,19 @@
 #pragma once
 
 #include <string>
-class Menu
-{
+class Player; // Forward declaration
+
+/// @brief Classe que representa um menu.
+class Menu {
 public:
+    /// @brief Construtor da classe Menu.
     Menu();
+
+    /// @brief Lista as atividades disponíveis para um jogador.
+    /// @param p Ponteiro para o jogador.
     void listarAtividades(Player *p);
+
+    // Métodos comentados para remoção temporária
     // virtual ~StorageManager();
     // void write(const T &data);
     // void read(const T &data, int totalRegistros);
@@ -15,4 +23,5 @@ private:
     // std::ifstream _file;
 };
 
+// Cabeçalho comentado para remoção temporária
 // #include "StorageManager.tpp"
