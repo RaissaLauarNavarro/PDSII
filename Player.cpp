@@ -5,8 +5,8 @@
 #include <iostream>
 
 
-Player::Player() : _name(""), _nivel(0), _inventario(0){};
-Player::Player(const std::string name) : _name(name), _nivel(0), _inventario(10){};
+Player::Player() : _name(""), _nivel(0), _inventario(0), _money(0){};
+Player::Player(const std::string name) : _name(name), _nivel(0), _inventario(10), _money(0){};
 
 
 void Player::functeste()
