@@ -26,7 +26,7 @@ void Fisherman::fish(Player* p)
 
     p->getInventory()->insert(peixesPossiveis[indiceAleatorio].getId(), peixesPossiveis[indiceAleatorio]);
     p->addXp(peixesPossiveis[indiceAleatorio].getUnitaryPrice() *2.0);
-    std::cout<<color::cyan << "Você pescou um " << peixesPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
+    std::cout<<color::cyan << "Voce pescou um " << peixesPossiveis[indiceAleatorio].getName() << "!" << color::off<<std::endl;
 }
 
 
@@ -39,8 +39,8 @@ void Fisherman::cleanFish(Player* p)
 
         if ((item.getId() >= 100 && item.getId() <= 105) && !item.getStatus()) {
             double cleanedPrice = item.getUnitaryPrice() * 1.1;
-            item.changePrice(cleanedPrice);
-            item.changeStatus();
+            playerInventory->updateItemPrice(item.getId(),cleanedPrice);
+            playerInventory->updateItemStatus(item.getId());
         }
     }
     p->addXp(15.0);

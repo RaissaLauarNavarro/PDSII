@@ -23,8 +23,14 @@ public:
     bool remove(int id, unsigned quantidade);
 
     /// @brief Imprime todos os ítens do inventário
+    void printInventory();
+
     /// @return um map com os itens e suas quantidades
     std::map<int,std::pair<Item, unsigned>> list();
+
+    void updateItemPrice(int id, double novoPreco);
+
+    void updateItemStatus(int id);
 
 private:
     unsigned _inventorySize;

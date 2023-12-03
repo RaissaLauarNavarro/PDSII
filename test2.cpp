@@ -44,3 +44,51 @@ TEST_CASE("Obter trigo e cenoura"){
     CHECK(p.getInventory()->hasItem(2, 1));
     CHECK(p.getInventory()->hasItem(3, 2));
 }
+
+
+TEST_CASE("Funções de mdificação de valores"){
+    SUBCASE("Limpar Peixes"){
+        Player p;
+        Fisherman fisherman;
+        p.getInventory()->insert(105, Item(105, "Peixe lendario", 50.00, 0));
+        p.getInventory()->insert(105, Item(105, "Peixe lendario", 50.00, 0));
+        fisherman.cleanFish(&p);
+        p.getInventory()->printInventory();
+         std::cout << std::endl;
+        // deve altera os valores, adicionando 10%
+    }
+    SUBCASE("Limpar Peixes 2 vezes"){
+        Player p;
+        Fisherman fisherman;
+        p.getInventory()->insert(105, Item(105, "Peixe lendario", 50.00, 0));
+        p.getInventory()->insert(105, Item(105, "Peixe lendario", 50.00, 0));
+        fisherman.cleanFish(&p);
+        p.getInventory()->printInventory();
+        fisherman.cleanFish(&p);
+        p.getInventory()->printInventory();
+         std::cout << std::endl;
+        // não deve alterar os valores da 2 vez
+    }
+    SUBCASE("Refinar minérios"){
+        Player p;
+        Miner miner;
+        p.getInventory()->insert(204, Item(204, "Esmeralda", 20.00, 0));
+        p.getInventory()->insert(204, Item(204, "Esmeralda", 20.00, 0));
+        miner.refine(&p);
+        p.getInventory()->printInventory();
+        std::cout << std::endl;
+        // deve altera os valores, adicionando 10%
+    }
+    SUBCASE("Refinar minérios 2 vezes"){
+        Player p;
+        Miner miner;
+        p.getInventory()->insert(204, Item(204, "Esmeralda", 20.00, 0));
+        p.getInventory()->insert(204, Item(204, "Esmeralda", 20.00, 0));
+        miner.refine(&p);
+        p.getInventory()->printInventory();
+        miner.refine(&p);
+        p.getInventory()->printInventory();
+        std::cout << std::endl;
+        // não deve alterar os valores da 2 vez
+    }
+}
