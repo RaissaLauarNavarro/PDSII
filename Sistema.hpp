@@ -5,17 +5,31 @@
 #include <string>
 #include <sstream>
 
-/// @brief Classe que representa o sistema do jogo.
+/**
+ * @file
+ * @brief Contém a definição da classe Sistema.
+ */
+
+/**
+ * @class Sistema
+ * @brief Representa o sistema do jogo.
+ */
 class Sistema {
 public:
-    /// @brief Construtor da classe Sistema.
+    /**
+     * @brief Construtor da classe Sistema.
+     */
     Sistema();
 
-    /// @brief Cria um personagem no sistema.
+    /**
+     * @brief Cria um personagem no sistema.
+     */
     void criarPersonagem();
 
-    /// @brief Imprime um texto na saída padrão.
-    /// @param texto O texto a ser impresso.
+    /**
+     * @brief Imprime um texto na saída padrão.
+     * @param texto O texto a ser impresso.
+     */
     void printText(const std::string texto);
 
     // Métodos comentados para remoção temporária
