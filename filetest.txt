@@ -1,3 +1,67 @@
-id item
-nome item
-valor unitário item
+0
+Semente
+0.5
+
+1
+Trigo
+1.00
+
+2
+Cenoura
+1.00
+
+3
+Bacon
+5.00
+
+4
+Ovo
+5.00
+
+5
+Peixe Dourado
+5.00
+
+6
+Salmão Prateado
+5.50
+
+7
+Truta Azul
+6.00
+
+8
+Carpa Bronze
+6.50
+
+9
+Angelfish Estrelado
+25.00
+
+10
+Lambari Diamante
+50.00
+
+11
+Pedra
+1.00
+
+12
+Carvao
+2.00
+
+13
+Ferro
+5.00
+
+14
+Ouro
+15.00
+
+15
+Esmeralda
+20.00
+
+16
+Diamante
+25.00

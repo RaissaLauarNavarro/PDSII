@@ -15,19 +15,19 @@ bool Inventory::hasItem(int id, unsigned quantidade)
     return (find != _inventory.end() && find->second.second >= quantidade);
 }
 
-bool Inventory::insert(int id,Item item)
+bool Inventory::insert(int id, Item item)
 {
     // std::cout <<color::grayf << "Item atual sendo inserido : " << color::off << std::endl;
-    
+
     auto find = _inventory.find(id);
-    if(_inventory.find(id) != _inventory.end())
-        find->second.second +=1;
+    if (_inventory.find(id) != _inventory.end())
+        find->second.second += 1;
     else
     {
-        _inventory.insert({id, std::make_pair(item,1)});
+        _inventory.insert({id, std::make_pair(item, 1)});
         find = _inventory.find(id);
     }
-    
+
     // std::cout <<color::grayf << "Qtd do item atual:" << find->second.second << color::off << std::endl;
 
     return true;
@@ -36,10 +36,14 @@ bool Inventory::insert(int id,Item item)
 bool Inventory::remove(int id, unsigned quantidade)
 {
     auto find = _inventory.find(id);
-    if (find != _inventory.end()) {
-        if (find->second.second >= quantidade) {
+    if (find != _inventory.end())
+    {
+        if (find->second.second >= quantidade)
+        {
             find->second.second -= quantidade;
-        }else{
+        }
+        else
+        {
             return false;
         }
     }
@@ -48,16 +52,17 @@ bool Inventory::remove(int id, unsigned quantidade)
 
 void Inventory::printInventory()
 {
-    std::cout<<color::yellows << "--------------- LISTAGEM DO INVENTARIO ---------------" <<color::off<< std::endl;
-    for(auto stack : _inventory)
+    std::cout << color::yellows << "--------------- LISTAGEM DO INVENTARIO ---------------" << color::off << std::endl;
+    for (auto stack : _inventory)
     {
-        std::cout << "Item: " << stack.second.first.getName() << " | Qtd:" << stack.second.second << " | Preco total:"<< stack.second.first.getUnitaryPrice()* static_cast<double>(stack.second.second)<< std::endl;
+        std::cout << "Item: " << stack.second.first.getName() << " | Qtd:" << stack.second.second << " | Preco total:" << stack.second.first.getUnitaryPrice() * static_cast<double>(stack.second.second) << std::endl;
     }
     std::cout << std::endl;
 }
 
-std::map<int, std::pair<Item, unsigned>> Inventory::list(){
-     return _inventory;
+std::map<int, std::pair<Item, unsigned>> Inventory::list()
+{
+    return _inventory;
 }
 
 void Inventory::updateItemPrice(int id, double novoPreco)

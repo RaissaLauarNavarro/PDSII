@@ -1,6 +1,7 @@
 #pragma once
 #include "StorageManager.hpp"
-
+#include "ItemsStorage.hpp"
+#include "Item.hpp"
 /**
  * @file
  * @brief Contém a definição da classe ItemsStorage, uma subclasse de StorageManager.
@@ -10,7 +11,8 @@
  * @class ItemsStorage
  * @brief Gerencia o armazenamento de itens.
  */
-class ItemsStorage : public StorageManager {
+class ItemsStorage : public StorageManager<Item>
+{
 public:
     /**
      * @brief Construtor da classe ItemsStorage.
@@ -27,17 +29,21 @@ public:
      * @brief Escreve um item no armazenamento.
      * @param item O item a ser escrito.
      */
-    void write(const Item item) override;
+    void write(const Item &item) override;
 
     /**
      * @brief Lê dados do armazenamento.
      * @param data Os dados a serem lidos.
      */
-    void read(char const *data) override;
+    void read(int totalRegistros) override;
 
     /**
      * @brief Encontra um item no armazenamento.
-     * @param data Os dados do item a ser encontrado.
+     * @param tipo Tipo de item ramdômico que deve ser buscado.
+     * 1- Peixes
+     * 2- Minérios
      */
-    void findOne(char const *data) override;
+    Item findRandom(const int tipo);
+
+    Item findByName(const std::string name);
 };
