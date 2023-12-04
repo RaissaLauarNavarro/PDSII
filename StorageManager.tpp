@@ -33,10 +33,28 @@ void StorageManager<T>::write(const T &data)
     // fputs(data, _file);
 }
 template <typename T>
-void StorageManager<T>::read(const T &data, int totalRegistros)
+void StorageManager<T>::read(int totalRegistros)
 {
-    std::cout << "Tipo de dado: " << typeid(T).name() << std::endl;
+    // std::cout << "Tipo de dado: " << typeid(T).name() << std::endl;
     // std::cout << "Tipo de dado: " << typeid(T) << std::endl;
     // std::cout << data << std::endl;
     // fputs(data, _file);
 }
+// template <typename T>
+// T StorageManager<T>::findRandom(const std::string classe)
+// {
+//     unsigned seed = time(0);
+//     std::string linhaBuscada;
+//     srand(seed);
+//     int id = rand() % 5;
+//     _file.seekg(0);
+//     for (int i = 0; i < id; i++)
+//     {
+//         std::string lixo;
+//         std::getline(_file, lixo);
+//     }
+//     std::getline(_file, linhaBuscada);
+//     std::cout << "Linha buscada : " << id << std::endl;
+//     std::cout << linhaBuscada << std::endl;
+//     return linhaBuscada;
+// }

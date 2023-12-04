@@ -4,14 +4,15 @@
 
 class Miner
 {
-    public:
-        /// @brief Gera peixes aletórios para o usuário
-        /// @param inventario invetário do jogador com seus itens
-        /// @return o inventário com seus valores alterados
-        void ore(Player* p);
+public:
+    /// @brief Gera peixes aletórios para o usuário
+    /// @param inventario invetário do jogador com seus itens
+    /// @param storage itens disponíves para serem adiconados ao invetário do player
+    /// @return o inventário com seus valores alterados
+    void ore(Player *p, ItemsStorage *storage);
 
-        /// @brief Aumenta o valor de venda dos peixes em 10% 
-        /// @param inventario invetário do jogador com seus itens
-        /// @return o inventário com seus valores alterados
-        void refine(Player* p);
+    /// @brief Aumenta o valor de venda dos peixes em 10%
+    /// @param inventario invetário do jogador com seus itens
+    /// @return o inventário com seus valores alterados
+    void refine(Player *p);
 };

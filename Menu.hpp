@@ -1,17 +1,20 @@
 #pragma once
 
 #include <string>
-class Player; // Forward declaration
+class Player;       // Forward declaration
+class ItemsStorage; // Forward declaration
+class Sistema;      // Forward declaration
 
 /// @brief Classe que representa um menu.
-class Menu {
+class Menu
+{
 public:
     /// @brief Construtor da classe Menu.
     Menu();
 
     /// @brief Lista as atividades disponíveis para um jogador.
     /// @param p Ponteiro para o jogador.
-    void listarAtividades(Player *p);
+    void listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema);
 
     // Métodos comentados para remoção temporária
     // virtual ~StorageManager();
