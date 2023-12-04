@@ -48,6 +48,7 @@ Menu: terminalPallete player farmer Fisherman Livestocker Miner
 Sistema: terminalPallete player Menu
 	$(CC) $(FLAGS) -c Sistema.cpp -o sistema.o
 
+
 main: clean terminalPallete storeManagerTemplate storeManager itemsStorage item itemsManager inventory player farmer Fisherman Livestocker Miner Menu Sistema
 	$(CC) $(FLAGS) tPalette.o storeManager.o item.o itemsManager.o inventory.o player.o farmer.o Fisherman.o Livestocker.o Miner.o Menu.o Sistema.o main.cpp -o $(TARGET)
 
