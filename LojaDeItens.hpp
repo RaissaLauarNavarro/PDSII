@@ -17,6 +17,10 @@ public:
     /// @brief Exibe os itens disponíveis na loja e permite ao jogador comprar ou vender
     void exibirItens();
 
+    void LojaDeItens::comprarItem();
+
+    void LojaDeItens::venderItem();
+
 private:
     Player* _player;
     Inventory* _inventory;
