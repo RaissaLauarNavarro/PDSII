@@ -20,6 +20,6 @@ public:
 private:
     Player* _player;
     Inventory* _inventory;
-    Item* _item;
+    Item* _items;
 };
 
