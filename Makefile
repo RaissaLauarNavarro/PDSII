@@ -19,3 +19,25 @@ storeManager: storeManagerTemplate
 itemsStorage:
 	$(CC) $(FLAGS) -c ItemsStorage.hpp -o itemsStorage.o
 
+item: itemsStorage
+	$(CC) $(FLAGS) -c Item.cpp -o item.o
+
+itemsManager: storeManager item
+	$(CC) $(FLAGS) -c ItemsManager.cpp ItemsStorage.hpp -o itemsManager.o
+
+inventory: terminalPallete terminalPallete item
+	$(CC) $(FLAGS) -c Inventory.cpp -o inventory.o
+
+player: terminalPallete inventory item
+	$(CC) $(FLAGS) -c Player.cpp -o player.o
+
+farmer: terminalPallete inventory item player
+	$(CC) $(FLAGS) -c Farmer.cpp -o farmer.o
+
+Fisherman: terminalPallete inventory item player
+	$(CC) $(FLAGS) -c Fisherman.cpp -o fisherman.o
+
+Livestocker: terminalPallete inventory item player
+	$(CC) $(FLAGS) -c Livestocker.cpp -o livestocker.o
+
+
