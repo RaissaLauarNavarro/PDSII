@@ -3,14 +3,26 @@
 #include <string>
 class Player; // Forward declaration
 
-/// @brief Classe que representa um menu.
+/**
+ * @file
+ * @brief Contém a definição da classe Menu.
+ */
+
+/**
+ * @class Menu
+ * @brief Representa um menu.
+ */
 class Menu {
 public:
-    /// @brief Construtor da classe Menu.
+    /**
+     * @brief Construtor da classe Menu.
+     */
     Menu();
 
-    /// @brief Lista as atividades disponíveis para um jogador.
-    /// @param p Ponteiro para o jogador.
+    /**
+     * @brief Lista as atividades disponíveis para um jogador.
+     * @param p Ponteiro para o jogador.
+     */
     void listarAtividades(Player *p);
 
     // Métodos comentados para remoção temporária
@@ -20,7 +32,7 @@ public:
     // virtual void findOne(char const *data);
 
 private:
-    // std::ifstream _file;
+     std::ifstream _file;
 };
 
 // Cabeçalho comentado para remoção temporária
