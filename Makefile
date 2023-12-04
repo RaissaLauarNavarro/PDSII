@@ -9,3 +9,4 @@ clean:
 
 terminalPallete:
 	$(CC) $(FLAGS) -c TerminalPalette.hpp -o tPalette.o
+
