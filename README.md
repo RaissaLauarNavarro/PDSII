@@ -1,4 +1,4 @@
-# PDSII  :pig2: :baby_chick:	:seedling: :corn:
+# Jogo de Fazenda :pig2: :baby_chick:	:seedling: :corn:
 
 
 Trabalho de C++ do curso de Programação e Desenvolvimento de Software II - UFMG
@@ -15,16 +15,16 @@ No "nome do jogo", você deve realizar ações para receber moedas e suir de ní
 
 Transite entre as diferentes funcionalidades de um fazendeiro e obtenha os itens necessários para valorizar seus pertences.
 
-Não se esqueça de fazer negócio na loja e aumentar sua produção!
+Não se esqueça de fazer vendas na loja e aumentar sua produção!
 
 
 
 <br>
 
 ## Funcionalidades
-  - 
+  - Interagir com as plantações
 
-  -
+  - Ganhar pontos e subir de nível
 
   - Compre e venda itens na loja.
 
