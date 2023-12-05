@@ -24,9 +24,9 @@ Não se esqueça de fazer vendas na loja e aumentar sua produção!
 ## Funcionalidades
   - Interagir com as plantações
 
-  - Ganhar pontos e subir de nível
+  - Interagir com animais
 
-  - Compre e venda itens na loja.
+  - Ganhar pontos e subir de nível
 
 
 
