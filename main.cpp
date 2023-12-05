@@ -8,15 +8,25 @@
 #include "Player.cpp"
 #include "Menu.hpp"
 #include "Menu.cpp"
-#include "StorageManager.hpp"
 #include "Farmer.hpp"
 #include "Farmer.cpp"
-#include "LojaDeItens.hpp"
-#include "LojaDeItens.cpp"
+#include "Livestocker.hpp"
+#include "Livestocker.cpp"
+#include "Fisherman.hpp"
+#include "Fisherman.cpp"
+#include "Miner.hpp"
+#include "Miner.cpp"
+#include "ItemsStorage.cpp"
+#include "ItemsStorage.hpp"
+// #include "LojaDeItens.hpp"
+// #include "LojaDeItens.cpp"
 
 #include <string>
 #include <stack>
 
-int main() {
+int main()
+{
+  Sistema sistema = Sistema();
+  sistema.criarPersonagem();
   // TODO
 }

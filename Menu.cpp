@@ -32,9 +32,9 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
         sistema->printText("       6- Limpar os peixes");
         sistema->printText("       7- Minerar");
         sistema->printText("       8- Refinar os minerios");
-        sistema->printText("       9- Loja");
-        sistema->printText("       10- Ver inventario");
-        sistema->printText("       11- Ver perfil");
+        // sistema->printText("       9- Loja");
+        sistema->printText("       9- Ver inventario");
+        sistema->printText("       10- Ver perfil");
         sistema->printText("       0- Sair");
         std::cout << color::off;
 
@@ -99,12 +99,9 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
             m.refine(p, sistema);
             break;
         case 9:
-            // exibir a loja
-            break;
-        case 10:
             p->printInventory();
             break;
-        case 11:
+        case 10:
             p->displayProfile();
             break;
         default:
