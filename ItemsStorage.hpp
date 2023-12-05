@@ -1,6 +1,6 @@
 #pragma once
 #include "StorageManager.hpp"
-#include "ItemsStorage.cpp"
+#include "ItemsStorage.hpp"
 #include "Item.hpp"
 /**
  * @file
