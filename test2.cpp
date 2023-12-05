@@ -111,6 +111,7 @@ TEST_CASE("Testes items storage")
 
 
 TEST_CASE("LojaDeItens - Compra e Venda") {
+    ///@brief Faz-se necessário testes para mais itens
     Player player(40);  // Jogador com $40 
     Inventory inventory;  // Inventário vazio
     std::vector<Item> items;  // Lista de itens vazia
