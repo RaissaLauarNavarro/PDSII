@@ -20,11 +20,12 @@ public:
      * @param player Ponteiro para o jogador.
      * @param storage Ponteiro para o armazenamento de itens.
      */
-    void fish(Player *player, ItemsStorage *storage);
+    void fish(Player *p, ItemsStorage *storage, Sistema *sistema);
 
     /**
      * @brief Aumenta o valor de venda dos peixes em 10%.
      * @param player Ponteiro para o jogador.
+     * @param sistema Ponteiro para o sistema.
      */
-    void cleanFish(Player *player);
+    void cleanFish(Player *p, Sistema *sistema);
 };

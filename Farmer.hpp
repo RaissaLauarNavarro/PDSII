@@ -20,7 +20,7 @@ public:
      * @param player Ponteiro para o jogador.
      * @param storage Ponteiro para o armazenamento de itens.
      */
-    void getWheat(int quantidade, Player *player, ItemsStorage *storage);
+    void getWheat(int quantidade, Player *player, ItemsStorage *storage, Sistema *sistema);
 
     /**
      * @brief Substitui o item semente por cenoura.
@@ -28,5 +28,5 @@ public:
      * @param player Ponteiro para o jogador.
      * @param storage Ponteiro para o armazenamento de itens.
      */
-    void getCarrot(int quantidade, Player *player, ItemsStorage *storage);
+    void getCarrot(int quantidade, Player *player, ItemsStorage *storage, Sistema *sistema);
 };

@@ -9,10 +9,10 @@ public:
     /// @param inventario invetário do jogador com seus itens
     /// @param storage itens disponíves para serem adiconados ao invetário do player
     /// @return o inventário com seus valores alterados
-    void ore(Player *p, ItemsStorage *storage);
+    void ore(Player *p, ItemsStorage *storage, Sistema *sistema);
 
     /// @brief Aumenta o valor de venda dos peixes em 10%
     /// @param inventario invetário do jogador com seus itens
     /// @return o inventário com seus valores alterados
-    void refine(Player *p);
+    void refine(Player *p, Sistema *sistema);
 };

@@ -11,15 +11,17 @@
 #include "Inventory.hpp"
 #include "TerminalPalette.hpp"
 
-void Fisherman::fish(Player *p, ItemsStorage *storage)
+void Fisherman::fish(Player *p, ItemsStorage *storage, Sistema *sistema)
 {
     Item peixe = storage->findRandom(1);
     p->getInventory()->insert(peixe.getId(), peixe);
     p->addXp(peixe.getUnitaryPrice() * 2.0);
-    std::cout << color::cyan << "Voce pescou um " << peixe.getName() << "!" << color::off << std::endl;
+    std::cout << color::cyan;
+    sistema->printText("Voce pescou um " + peixe.getName() + "!");
+    std::cout << color::off;
 }
 
-void Fisherman::cleanFish(Player *p)
+void Fisherman::cleanFish(Player *p, Sistema *sistema)
 {
     Inventory *playerInventory = p->getInventory();
     bool limpou = false;
@@ -38,10 +40,14 @@ void Fisherman::cleanFish(Player *p)
     if (limpou)
     {
         p->addXp(15.0);
-        std::cout << color::cyan << "Agora seus peixes valem mais!" << color::off << std::endl;
+        std::cout << color::cyan;
+        sistema->printText("Agora seus peixes valem mais!");
+        std::cout << color::off;
     }
     else
     {
-        std::cout << color::red << "Ops, parece que todos os seus peixes ja estao limpos..." << color::off << std::endl;
+        std::cout << color::red;
+        sistema->printText("Ops, parece que todos os seus peixes ja estao limpos...");
+        std::cout << color::off;
     }
 }
