@@ -40,19 +40,36 @@ Item ItemsStorage::findByName(std::string name)
     throw std::runtime_error("Item inexistente");
 }
 
-Item ItemsStorage::findRandom(const int teste)
+Item ItemsStorage::findRandom(const int tipo)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::discrete_distribution<> distribuicao{
-        25, // 25% de chance para 0
-        25, // 25% de chance para 1
-        20, // 20% de chance para 2
-        15, // 15% de chance para 3
-        10, // 10% de chance para 4
-        5   // 5% de chance para 5
-    };
-    int id = distribuicao(gen) + teste * 5;
+    int id;
+    if (tipo == 1)
+    {
+        std::discrete_distribution<> distribuicao{
+            25, // 25% de chance para 0
+            25, // 25% de chance para 1
+            20, // 20% de chance para 2
+            15, // 15% de chance para 3
+            10, // 10% de chance para 4
+            5   // 5% de chance para 5
+        };
+        id = distribuicao(gen) + tipo * 5;
+    }
+    else
+    {
+        std::discrete_distribution<> distribuicao{
+            0,  // 25% de chance para 0
+            25, // 25% de chance para 1
+            25, // 25% de chance para 2
+            20, // 20% de chance para 3
+            15, // 15% de chance para 4
+            10, // 10% de chance para 5
+            5   // 5% de chance para 6
+        };
+        id = distribuicao(gen) + tipo * 5;
+    }
 
     _file.seekg(0, _file.beg);
     std::string lixo;
@@ -63,13 +80,10 @@ Item ItemsStorage::findRandom(const int teste)
     std::string nome;
     double price;
     std::getline(_file, nome);
-    // std::cout << "Id do item:" << nome << std::endl;
     std::getline(_file, nome);
-    // std::cout << "Nome do item:" << nome << std::endl;
     std::string priceLine;
     std::getline(_file, priceLine);
     price = std::stod(priceLine);
-    // std::cout << "Preço do item:" << price << std::endl;
     Item itemBuscado(id, nome, price, false);
 
     return itemBuscado;

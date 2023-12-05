@@ -11,15 +11,17 @@
 #include "ItemsStorage.hpp"
 #include "TerminalPalette.hpp"
 
-void Miner::ore(Player *p, ItemsStorage *storage)
+void Miner::ore(Player *p, ItemsStorage *storage, Sistema *sistema)
 {
     Item minerio = storage->findRandom(2);
     p->getInventory()->insert(minerio.getId(), minerio);
     p->addXp(minerio.getUnitaryPrice() * 2.0);
-    std::cout << color::cyan << "Voce mineirou 1 " << minerio.getName() << "!" << color::off << std::endl;
+    std::cout << color::cyan;
+    sistema->printText("Voce mineirou 1 " + minerio.getName() + "!");
+    std::cout << color::off;
 }
 
-void Miner::refine(Player *p)
+void Miner::refine(Player *p, Sistema *sistema)
 {
     Inventory *playerInventory = p->getInventory();
     bool refinou = false;
@@ -39,8 +41,12 @@ void Miner::refine(Player *p)
     {
 
         p->addXp(15.0);
-        std::cout << color::cyan << "Agora seus minerios valem mais!" << color::off << std::endl;
+        std::cout << color::cyan;
+        sistema->printText("Agora seus minerios valem mais!");
+        std::cout << color::off;
     }
     else
-        std::cout << color::red << "Ops, parece que seus minerios ja estao refinados..." << color::off << std::endl;
+        std::cout << color::red;
+    sistema->printText("Ops, parece que seus minerios ja estao refinados...");
+    std::cout << color::off;
 }

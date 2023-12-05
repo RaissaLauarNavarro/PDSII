@@ -7,7 +7,7 @@
 #include "Player.hpp"
 #include "TerminalPalette.hpp"
 
-void Farmer::getWheat(int quantidade, Player *p, ItemsStorage *storage)
+void Farmer::getWheat(int quantidade, Player *p, ItemsStorage *storage, Sistema *sistema)
 {
     try
     {
@@ -28,13 +28,17 @@ void Farmer::getWheat(int quantidade, Player *p, ItemsStorage *storage)
     }
     catch (std::runtime_error const &e)
     {
-        std::cout << color::redi << "Nao foi possivel plantar o trigo... verifique se possui todos os itens necessarios" << color::off << std::endl;
+        std::cout << color::redi;
+        sistema->printText("Nao foi possivel plantar o trigo... verifique se possui todos os itens necessarios");
+        std::cout << color::off << std::endl;
         return;
     }
-    std::cout << color::cyan << "Trigos adicionados ao seu inventario!" << color::off << std::endl;
+    std::cout << color::cyan;
+    sistema->printText("Trigos adicionados ao seu inventario!");
+    std::cout << color::off << std::endl;
 }
 
-void Farmer::getCarrot(int quantidade, Player *p, ItemsStorage *storage)
+void Farmer::getCarrot(int quantidade, Player *p, ItemsStorage *storage, Sistema *sistema)
 {
     try
     {
@@ -55,8 +59,12 @@ void Farmer::getCarrot(int quantidade, Player *p, ItemsStorage *storage)
     }
     catch (std::runtime_error const &e)
     {
-        std::cout << color::redi << "Nao foi possivel plantar a cenoura... verifique se possui todos os itens necessarios" << color::off << std::endl;
+        std::cout << color::redi;
+        sistema->printText("Nao foi possivel plantar a cenoura... verifique se possui todos os itens necessarios");
+        std::cout << color::off;
         return;
     }
-    std::cout << color::cyan << "Cenouras adicionadas ao seu inventario!" << color::off << std::endl;
+    std::cout << color::cyan;
+    sistema->printText("Cenouras adicionadas ao seu inventario!");
+    std::cout << color::off;
 }

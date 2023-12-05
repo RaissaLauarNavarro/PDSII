@@ -44,47 +44,59 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
             if (std::cin.fail())
             {
                 std::cin.clear();
-                std::cout << color::redf << "Digite uma tarefa válida" << color::off << std::endl;
+                std::cout << color::redf;
+                sistema->printText("Digite uma tarefa válida");
+                std::cout << color::off << std::endl;
             }
             else if (option < 0 || option > 11)
             {
-                std::cout << color::grayb << "Uhmm, ainda nao sabemos fazer essa tarefa..." << color::off << std::endl;
+                std::cout << color::grayb;
+                sistema->printText("Uhmm, ainda nao sabemos fazer essa tarefa...");
+                std::cout << color::off << std::endl;
             }
         } while (std::cin.fail() || option < 0 || option > 11);
 
         switch (option)
         {
         case 1:
-            std::cout << color::grayb << "Quantos trigos deseja plantar?" << color::off << std::endl;
+            std::cout << color::grayb;
+            sistema->printText("Quantos trigos deseja plantar?");
+            std::cout << color::off;
             std::cin >> quantidade;
-            f.getWheat(quantidade, p, storage);
+            f.getWheat(quantidade, p, storage, sistema);
             break;
         case 2:
-            std::cout << color::grayb << "Quantas cenouras deseja plantar?" << color::off << std::endl;
+            std::cout << color::grayb;
+            sistema->printText("Quantas cenouras deseja plantar?");
+            std::cout << color::off << std::endl;
             std::cin >> quantidade;
-            f.getCarrot(quantidade, p, storage);
+            f.getCarrot(quantidade, p, storage, sistema);
             break;
         case 3:
-            std::cout << color::grayb << "Quantas galinhas deseja alimentar?" << color::off << std::endl;
+            std::cout << color::grayb;
+            sistema->printText("Quantas galinhas deseja alimentar?");
+            std::cout << color::off << std::endl;
             std::cin >> quantidade;
-            l.getEgg(quantidade, p, storage);
+            l.getEgg(quantidade, p, storage, sistema);
             break;
         case 4:
-            std::cout << color::grayb << "Quantos porcos deseja cuidar?" << color::off << std::endl;
+            std::cout << color::grayb;
+            sistema->printText("Quantos porcos deseja cuidar?");
+            std::cout << color::off << std::endl;
             std::cin >> quantidade;
-            l.getBacon(quantidade, p, storage);
+            l.getBacon(quantidade, p, storage, sistema);
             break;
         case 5:
-            i.fish(p, storage);
+            i.fish(p, storage, sistema);
             break;
         case 6:
-            i.cleanFish(p);
+            i.cleanFish(p, sistema);
             break;
         case 7:
-            m.ore(p, storage);
+            m.ore(p, storage, sistema);
             break;
         case 8:
-            m.refine(p);
+            m.refine(p, sistema);
             break;
         case 9:
             // exibir a loja
