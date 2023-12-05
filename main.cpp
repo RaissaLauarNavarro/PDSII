@@ -11,12 +11,12 @@
 #include "StorageManager.hpp"
 #include "Farmer.hpp"
 #include "Farmer.cpp"
-#include "LojaDeItens.hpp"
-#include "LojaDeItens.cpp"
 
 #include <string>
 #include <stack>
 
 int main() {
-  // TODO
+  Sistema sistema;
+  sistema.criarPersonagem();
+  return 0;
 }
