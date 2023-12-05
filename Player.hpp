@@ -44,6 +44,7 @@ private:
     std::string _name; ///< Nome do jogador.
     float _level; ///< Nível do jogador.
     float _xp; ///< Experiência do jogador.
+    float _money; ///Dinheiro do jogador
     Inventory _inventario; ///< Inventário do jogador.
 };
 

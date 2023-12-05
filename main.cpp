@@ -24,9 +24,9 @@
 #include <string>
 #include <stack>
 
-int main()
-{
-  Sistema sistema = Sistema();
+
+int main() {
+  Sistema sistema;
   sistema.criarPersonagem();
-  // TODO
+  return 0;
 }
