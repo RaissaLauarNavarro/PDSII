@@ -47,7 +47,7 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
                 sistema->printText("Digite uma tarefa válida");
                 std::cout << color::off << std::endl;
             }
-            else if (option < 0 || option > 11)
+            else if (option < 0 || option > 10)
             {
                 std::cout << color::grayb;
                 sistema->printText("Uhmm, ainda nao sabemos fazer essa tarefa...");
