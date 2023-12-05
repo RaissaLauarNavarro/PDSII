@@ -1,6 +1,5 @@
 
 #include <ctime>
-// #include "StorageManager.hpp"
 #include <random>
 
 ItemsStorage::ItemsStorage(char const *file_path) : StorageManager(file_path){};
