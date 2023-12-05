@@ -49,7 +49,7 @@ void Sistema::criarPersonagem()
     //     }
     // } while (classe != 1 && classe != 2 && classe != 3 && classe != 4);
     _player = Player(nome);
-    ItemsStorage storage("./filetest.txt");
+    ItemsStorage storage("./Itens.txt");
     Menu menu = Menu();
 
     menu.listarAtividades(&_player, &storage, this);
