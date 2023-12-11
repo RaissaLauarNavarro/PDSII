@@ -1,5 +1,4 @@
 #include "Menu.hpp"
-#include "ItemsStorage.hpp"
 #include "Sistema.hpp"
 #include "Player.hpp"
 #include "Farmer.hpp"
@@ -11,11 +10,11 @@
 
 Menu::Menu(){};
 
-void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
+void Menu::listarAtividades(Player *p, Sistema *sistema)
 {
 
     int option;
-    int quantidade;
+    int quantidade = 0;
     Farmer f;
     Livestocker l;
     Fisherman i;
@@ -34,6 +33,7 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
         sistema->printText("       8- Refinar os minerios");
         sistema->printText("       9- Ver inventario");
         sistema->printText("       10- Ver perfil");
+        sistema->printText("       11- Obter mais sementes");
         sistema->printText("       0- Sair");
         std::cout << color::off;
 
@@ -47,7 +47,7 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
                 sistema->printText("Digite uma tarefa válida");
                 std::cout << color::off << std::endl;
             }
-            else if (option < 0 || option > 10)
+            else if (option < 0 || option > 11)
             {
                 std::cout << color::grayb;
                 sistema->printText("Uhmm, ainda nao sabemos fazer essa tarefa...");
@@ -62,37 +62,37 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
             sistema->printText("Quantos trigos deseja plantar?");
             std::cout << color::off;
             std::cin >> quantidade;
-            f.getWheat(quantidade, p, storage, sistema);
+            f.getWheat(quantidade, p, sistema);
             break;
         case 2:
             std::cout << color::grayb;
             sistema->printText("Quantas cenouras deseja plantar?");
             std::cout << color::off << std::endl;
             std::cin >> quantidade;
-            f.getCarrot(quantidade, p, storage, sistema);
+            f.getCarrot(quantidade, p, sistema);
             break;
         case 3:
             std::cout << color::grayb;
             sistema->printText("Quantas galinhas deseja alimentar?");
             std::cout << color::off << std::endl;
             std::cin >> quantidade;
-            l.getEgg(quantidade, p, storage, sistema);
+            l.getEgg(quantidade, p, sistema);
             break;
         case 4:
             std::cout << color::grayb;
             sistema->printText("Quantos porcos deseja cuidar?");
             std::cout << color::off << std::endl;
             std::cin >> quantidade;
-            l.getBacon(quantidade, p, storage, sistema);
+            l.getBacon(quantidade, p, sistema);
             break;
         case 5:
-            i.fish(p, storage, sistema);
+            i.fish(p, sistema);
             break;
         case 6:
             i.cleanFish(p, sistema);
             break;
         case 7:
-            m.ore(p, storage, sistema);
+            m.ore(p, sistema);
             break;
         case 8:
             m.refine(p, sistema);
@@ -102,6 +102,12 @@ void Menu::listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema)
             break;
         case 10:
             p->displayProfile();
+            break;
+        case 11:
+            p->getInventory()->insert(1, Item(1, "Semente", 0.50, 0));
+            std::cout << color::grayb;
+            sistema->printText("Novas sementes foram adicionadas!");
+            std::cout << color::off;
             break;
         default:
             break;

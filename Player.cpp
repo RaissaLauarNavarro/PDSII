@@ -7,9 +7,9 @@
 Player::Player() : _name(""), _level(0.0), _xp(0.0), _inventario(0){};
 Player::Player(const std::string name) : _name(name), _level(0.0), _xp(0.0), _inventario(10)
 {
-    _inventario.insert(0, Item(0, "Semente", 0.5, false));
-    _inventario.insert(0, Item(0, "Semente", 0.5, false));
-    _inventario.insert(0, Item(0, "Semente", 0.5, false));
+    _inventario.insert(1, Item(1, "Semente", 0.50, 0));
+    _inventario.insert(1, Item(1, "Semente", 0.50, 0));
+    _inventario.insert(1, Item(1, "Semente", 0.50, 0));
 };
 
 void Player::printInventory()

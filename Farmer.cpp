@@ -3,66 +3,51 @@
 #include "Farmer.hpp"
 #include "Item.hpp"
 #include "Inventory.hpp"
-#include "ItemsStorage.hpp"
 #include "Player.hpp"
+#include "Sistema.hpp"
 #include "TerminalPalette.hpp"
 
-void Farmer::getWheat(int quantidade, Player *p, ItemsStorage *storage, Sistema *sistema)
+void Farmer::getWheat(int quantidade, Player *p, Sistema *sistema)
 {
-    try
-    {
         if (p->getInventory()->hasItem(0, quantidade))
         {
             for (int i = 0; i < quantidade; i++)
             {
                 p->getInventory()->remove(0, 1);
-                Item item = storage->findByName("Trigo");
-                p->getInventory()->insert(item.getId(), item);
+                p->getInventory()->insert(2, Item(2, "Trigo", 1.00, 0));
                 p->addXp(15.0);
             }
         }
         else
         {
-            throw std::runtime_error("Não foi encontrada semente");
+            std::cout << color::redi;
+            sistema->printText("Nao foi possivel plantar o trigo... verifique se possui todos os itens necessarios");
+            std::cout << color::off << std::endl;
+            return;
         }
-    }
-    catch (std::runtime_error const &e)
-    {
-        std::cout << color::redi;
-        sistema->printText("Nao foi possivel plantar o trigo... verifique se possui todos os itens necessarios");
-        std::cout << color::off << std::endl;
-        return;
-    }
     std::cout << color::cyan;
     sistema->printText("Trigos adicionados ao seu inventario!");
     std::cout << color::off << std::endl;
 }
 
-void Farmer::getCarrot(int quantidade, Player *p, ItemsStorage *storage, Sistema *sistema)
+void Farmer::getCarrot(int quantidade, Player *p, Sistema *sistema)
 {
-    try
+  
+    if (p->getInventory()->hasItem(0, quantidade))
     {
-        if (p->getInventory()->hasItem(0, quantidade))
+        for (int i = 0; i < quantidade; i++)
         {
-            for (int i = 0; i < quantidade; i++)
-            {
-                Item cenoura = storage->findByName("Cenoura");
-                p->getInventory()->insert(cenoura.getId(), cenoura);
-                p->getInventory()->remove(0, 1);
-                p->addXp(15.0);
-            }
-        }
-        else
-        {
-            throw std::runtime_error("Não foi encontrada semente");
+            p->getInventory()->remove(0, 1);
+            p->getInventory()->insert(3, Item(3, "Cenoura", 1.00, 0));
+            p->addXp(15.0);
         }
     }
-    catch (std::runtime_error const &e)
+    else
     {
         std::cout << color::redi;
-        sistema->printText("Nao foi possivel plantar a cenoura... verifique se possui todos os itens necessarios");
-        std::cout << color::off;
-        return;
+    sistema->printText("Nao foi possivel plantar a cenoura... verifique se possui todos os itens necessarios");
+    std::cout << color::off;
+    return;
     }
     std::cout << color::cyan;
     sistema->printText("Cenouras adicionadas ao seu inventario!");

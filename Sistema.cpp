@@ -52,7 +52,7 @@ void Sistema::criarPersonagem()
     ItemsStorage storage("./Itens.txt");
     Menu menu = Menu();
 
-    menu.listarAtividades(&_player, &storage, this);
+    menu.listarAtividades(&_player, this);
 
     _player.printInventory();
 };

@@ -4,59 +4,45 @@
 #include "Livestocker.hpp"
 #include "Item.hpp"
 #include "Inventory.hpp"
-#include "ItemsStorage.hpp"
+#include "Sistema.hpp"
 #include "TerminalPalette.hpp"
 
-void Livestocker::getBacon(int quantidade, Player *p, ItemsStorage *storage, Sistema *sistema)
+void Livestocker::getBacon(int quantidade, Player *p, Sistema *sistema)
 {
-    try
+    
+    if (p->getInventory()->hasItem(3, quantidade))
     {
-        if (p->getInventory()->hasItem(2, quantidade))
+        for (int i = 0; i < quantidade; i++)
         {
-            for (int i = 0; i < quantidade; i++)
-            {
-                Item bacon = storage->findByName("Bacon");
-                p->getInventory()->insert(bacon.getId(), bacon);
-                p->getInventory()->remove(2, 1);
-            }
-        }
-        else
-        {
-            throw std::runtime_error("Não foi encontrada cenoura");
+            p->getInventory()->insert(12, Item(12, "Bacon", 5.00, 0)); 
+            p->getInventory()->remove(3, 1);
+            p->addXp(15.0);
         }
     }
-    catch (std::runtime_error const &e)
+    else
     {
         std::cout << color::redi;
         sistema->printText("Nao foi possivel produzir bacon... verifique se possui todos os itens necessarios");
         std::cout << color::off;
         return;
     }
-    p->addXp(15.0);
     std::cout << color::cyan;
     sistema->printText("Bacons adicionados ao seu inventario!");
     std::cout << color::off;
 }
 
-void Livestocker::getEgg(int quantidade, Player *p, ItemsStorage *storage, Sistema *sistema)
+void Livestocker::getEgg(int quantidade, Player *p, Sistema *sistema)
 {
-    try
+    
+    if (p->getInventory()->hasItem(2, quantidade))
     {
-        if (p->getInventory()->hasItem(1, quantidade))
-        {
-            for (int i = 0; i < quantidade; i++)
-            {
-                Item ovo = storage->findByName("Ovo");
-                p->getInventory()->insert(ovo.getId(), ovo);
-                p->getInventory()->remove(1, quantidade);
-            }
-        }
-        else
-        {
-            throw std::runtime_error("Não foi encontrado trigo");
+        for (int i = 0; i < quantidade; i++)
+        {                
+            p->getInventory()->insert(13, Item(13, "Ovo", 3.00, 0)); 
+            p->getInventory()->remove(2, quantidade);
         }
     }
-    catch (std::runtime_error const &e)
+    else
     {
         std::cout << color::redi;
         sistema->printText("Nao foi possivel produzir ovo... verifique se possui todos os itens necessarios");

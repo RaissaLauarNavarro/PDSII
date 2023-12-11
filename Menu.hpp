@@ -14,7 +14,7 @@ public:
 
     /// @brief Lista as atividades disponíveis para um jogador.
     /// @param p Ponteiro para o jogador.
-    void listarAtividades(Player *p, ItemsStorage *storage, Sistema *sistema);
+    void listarAtividades(Player *p, Sistema *sistema);
 
     // Métodos comentados para remoção temporária
     // virtual ~StorageManager();

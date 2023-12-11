@@ -18,8 +18,6 @@
 #include "Miner.cpp"
 #include "ItemsStorage.cpp"
 #include "ItemsStorage.hpp"
-// #include "LojaDeItens.hpp"
-// #include "LojaDeItens.cpp"
 
 #include <string>
 #include <stack>
@@ -28,5 +26,4 @@ int main()
 {
   Sistema sitema = Sistema();
   sitema.criarPersonagem();
-  // TODO
 }

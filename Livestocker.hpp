@@ -20,7 +20,7 @@ public:
      * @param player Ponteiro para o jogador.
      * @param storage Ponteiro para o gerenciador de items.
      */
-    void getBacon(int quantidade, Player *player, ItemsStorage *storage, Sistema *sistema);
+    void getBacon(int quantidade, Player *player, Sistema *sistema);
 
     /**
      * @brief Substitui o item trigo semente por ovo.
@@ -28,5 +28,5 @@ public:
      * @param player Ponteiro para o jogador.
      * @param storage Ponteiro para o gerenciador de items.
      */
-    void getEgg(int quantidade, Player *player, ItemsStorage *storage, Sistema *sistema);
+    void getEgg(int quantidade, Player *player, Sistema *sistema);
 };
