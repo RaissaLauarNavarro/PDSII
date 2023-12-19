@@ -11,7 +11,7 @@ Professor Luigi Domenico
 
 ## Sobre o projeto
 
-No "nome do jogo", você deve realizar ações para receber moedas e suir de nível!
+No nosso jogo, você deve realizar ações para receber moedas e suir de nível!
 
 Transite entre as diferentes funcionalidades de um fazendeiro e obtenha os itens necessários para valorizar seus pertences.
 
@@ -43,7 +43,7 @@ Para compilar e executar o programa, siga as instruções abaixo:
 3. Compile o programa com o seguinte comando:
 
    ```bash
-   colocar o comando
+   g++ -std=c++17 -Wall main.cpp -o main
     ```
 
 
