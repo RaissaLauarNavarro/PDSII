@@ -1,0 +1,24 @@
+Criar biblioteca de cores: https://terminalroot.com.br/2021/05/crie-sua-propria-biblioteca-de-cores-para-cpp.html
+
+
+
+Peixe:  ><((((°>
+Minhoca/lagarta: ~~°
+Sementes: ° * ª û
+Minérios: []  {}  O  ()
+
+
+Campo de plantação:
+    ____ ____ ____
+   |    |    |    |
+   |    | °  |  ª |
+   |____|____|____|
+   campo  campos
+   vazio  plantados
+
+    ____ ____
+   |    |    |
+   |  V |  Y |
+   |____|____|
+      campos
+      nascendo
