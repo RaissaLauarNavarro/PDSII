@@ -11,7 +11,7 @@ Professor Luigi Domenico
 
 ## Sobre o projeto
 
-No nosso jogo, você deve realizar ações para receber moedas e suir de nível!
+No nosso jogo, você deve realizar ações para receber moedas e subir de nível!
 
 Transite entre as diferentes funcionalidades de um fazendeiro e obtenha os itens necessários para valorizar seus pertences.
 
